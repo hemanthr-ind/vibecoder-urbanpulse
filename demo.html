@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UrbanPulse - Stage 4</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+          href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+</head>
+
+<body>
+
+<header>
+    <h1>UrbanPulse</h1>
+    <p>See the Issue. Understand the Impact. Prioritise the Action.</p>
+    <small>STAGE 4 — SMART ISSUE MANAGEMENT</small>
+</header>
+
+<div class="layout">
+
+    <aside class="sidebar">
+        <h3>MAIN MENU</h3>
+        <a href="#dashboard" class="active">▦ Dashboard</a>
+        <a href="#report-section">＋ Report Issue</a>
+        <a href="#issues-section">☷ All Reports</a>
+        <a href="#map-section">📍 Issue Map</a>
+    </aside>
+
+    <main class="main">
+
+        <h2 id="dashboard">Civic Monitoring Dashboard</h2>
+        <p class="subtitle">Monitor and manage reported civic issues.</p>
+
+        <section class="dashboard">
+
+            <div class="stat">
+                <p>Total Reports</p>
+                <h2 id="total">0</h2>
+            </div>
+
+            <div class="stat">
+                <p>High Priority</p>
+                <h2 id="high">0</h2>
+            </div>
+
+            <div class="stat">
+                <p>Pending Issues</p>
+                <h2 id="pending">0</h2>
+            </div>
+
+            <div class="stat">
+                <p>Resolved Issues</p>
+                <h2 id="resolved">0</h2>
+            </div>
+
+        </section>
+
+        <section class="panel" id="report-section">
+            <h2>Report a Civic Issue</h2>
+
+            <form id="reportForm">
+
+                <label for="category">Issue Category</label>
+                <select id="category">
+                    <option value="Pothole">Pothole</option>
+                    <option value="Garbage">Garbage</option>
+                </select>
+
+                <label for="location">Location</label>
+                <input id="location"
+                       type="text"
+                       placeholder="Enter location"
+                       required>
+
+                <label for="description">Description</label>
+                <textarea id="description"
+                          placeholder="Describe the issue"
+                          required></textarea>
+
+                <label for="priority">Priority Level</label>
+                <select id="priority">
+                    <option value="Low">Low</option>
+                    <option value="Medium" selected>Medium</option>
+                    <option value="High">High</option>
+                </select>
+
+                <button type="submit">Submit Report</button>
+
+            </form>
+        </section>
+
+        <section class="panel" id="issues-section">
+
+            <h2>Reported Issues</h2>
+
+            <div class="filters">
+
+                <div>
+                    <label for="search">Search Reports</label>
+                    <input id="search"
+                           type="text"
+                           placeholder="Search category, location or description">
+                </div>
+
+                <div>
+                    <label for="filter">Category</label>
+                    <select id="filter">
+                        <option value="All">All Categories</option>
+                        <option value="Pothole">Potholes</option>
+                        <option value="Garbage">Garbage</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="priorityFilter">Priority</label>
+                    <select id="priorityFilter">
+                        <option value="All">All Priorities</option>
+                        <option value="High">High</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Low">Low</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="statusFilter">Status</label>
+                    <select id="statusFilter">
+                        <option value="All">All Statuses</option>
+                        <option value="Pending">Pending</option>
+                        <option value="Resolved">Resolved</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <button type="button" id="clearFilters" class="secondary-button">
+                Clear Filters
+            </button>
+
+            <p id="resultCount" class="result-count"></p>
+
+            <div id="reports"></div>
+
+        </section>
+
+        <section class="panel" id="map-section">
+            <h2>Geographical Issue Map</h2>
+            <p>Sample civic issue locations around Tumakuru.</p>
+
+            <div id="map"></div>
+
+            <div class="map-legend">
+                <span>🔴 Pothole</span>
+                <span>🟠 Garbage</span>
+            </div>
+
+            <small>Demo locations use sample coordinates, not verified GPS positions.</small>
+        </section>
+
+    </main>
+</div>
+
+<footer>
+    UrbanPulse | Student Hackathon Demo | Sample Data Only
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
