@@ -1,4 +1,6 @@
 
+// SAMPLE CIVIC ISSUE DATA
+
 let issues = [
     {
         category: "Pothole",
@@ -30,86 +32,102 @@ let issues = [
 ];
 
 // CREATE MAP
-let map = L.map("map").setView([13.3400, 77.1000], 13);
 
+let map = null;
+let markerLayer = null;
 
-L.tileLayer(
-  'https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}',
-  {
-    attribution: 'Tiles © Esri, HERE, Garmin, USGS, and other contributors'
-  }
-).addTo(map);
+if (typeof L !== "undefined" && document.getElementById("map")) {
+    map = L.map("map").setView([13.3400, 77.1000], 13);
 
-
-let markerLayer = L.layerGroup().addTo(map);
-
-// UPDATE MAP MARKERS
-function updateMap() {
-
-    markerLayer.clearLayers();
-
-    let selected = document.getElementById("filter").value;
-
-    issues.forEach(issue => {
-
-        if (selected !== "All" && issue.category !== selected) {
-            return;
+    L.tileLayer(
+        "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}",
+        {
+            attribution: "Tiles © Esri and its contributors"
         }
+    ).addTo(map);
 
-        let color = issue.category === "Pothole"
-            ? "#e74c3c" : "#e6a23c";
+    markerLayer = L.layerGroup().addTo(map);
+}
 
-        let marker = L.circleMarker(
-            [issue.lat, issue.lng],
-            {
-                radius: 9,
-                color: color,
-                fillColor: color,
-                fillOpacity: 0.85
-            }
-        );
+// GET FILTERED ISSUES
 
-        marker.bindPopup(
-            "<b>" + issue.category + "</b><br>" +
-            issue.location + "<br>" +
-            "Priority: " + issue.priority + "<br>" +
-            "Status: " + issue.status
-        );
+function getFilteredIssues() {
+    let searchText = document.getElementById("search").value.toLowerCase();
+    let category = document.getElementById("filter").value;
+    let priority = document.getElementById("priorityFilter").value;
+    let status = document.getElementById("statusFilter").value;
 
-        marker.addTo(markerLayer);
+    return issues.filter(issue => {
+
+        let matchesSearch =
+            issue.category.toLowerCase().includes(searchText) ||
+            issue.location.toLowerCase().includes(searchText) ||
+            issue.description.toLowerCase().includes(searchText);
+
+        let matchesCategory =
+            category === "All" || issue.category === category;
+
+        let matchesPriority =
+            priority === "All" || issue.priority === priority;
+
+        let matchesStatus =
+            status === "All" || issue.status === status;
+
+        return matchesSearch &&
+               matchesCategory &&
+               matchesPriority &&
+               matchesStatus;
     });
 }
 
 // DISPLAY REPORTS
-function displayReports() {
 
+function displayReports() {
     let reports = document.getElementById("reports");
+    let filteredIssues = getFilteredIssues();
+
     reports.innerHTML = "";
 
-    let selected = document.getElementById("filter").value;
+    document.getElementById("resultCount").textContent =
+        "Showing " + filteredIssues.length + " of " + issues.length + " reports";
 
-    issues.forEach((issue, index) => {
+    if (filteredIssues.length === 0) {
+        reports.innerHTML =
+            '<div class="empty-message">No matching reports found.</div>';
+    }
 
-        if (selected !== "All" && issue.category !== selected) {
-            return;
-        }
+    filteredIssues.forEach(issue => {
+
+        let index = issues.indexOf(issue);
 
         reports.innerHTML += `
             <div class="report">
+
                 <h3>${issue.category}</h3>
+
                 <p><b>Location:</b> ${issue.location}</p>
+
                 <p>${issue.description}</p>
 
                 <span class="priority ${issue.priority}">
                     ${issue.priority} Priority
                 </span>
 
-                <p class="status">Status: ${issue.status}</p>
+                <p class="status">
+                    Status: <b>${issue.status}</b>
+                </p>
 
-                ${issue.status === "Pending" ?
-                `<button class="small-button"
-                onclick="resolveIssue(${index})">
-                Mark as Resolved</button>` : ""}
+                ${issue.status === "Pending"
+                    ? `<button class="small-button"
+                        onclick="resolveIssue(${index})">
+                        Mark as Resolved
+                       </button>`
+                    : `<button class="small-button"
+                        onclick="reopenIssue(${index})">
+                        Reopen Issue
+                       </button>`
+                }
+
             </div>
         `;
     });
@@ -118,10 +136,11 @@ function displayReports() {
     updateMap();
 }
 
-// UPDATE DASHBOARD
-function updateDashboard() {
+// UPDATE DASHBOARD COUNTS
 
-    document.getElementById("total").textContent = issues.length;
+function updateDashboard() {
+    document.getElementById("total").textContent =
+        issues.length;
 
     document.getElementById("high").textContent =
         issues.filter(i => i.priority === "High").length;
@@ -133,10 +152,45 @@ function updateDashboard() {
         issues.filter(i => i.status === "Resolved").length;
 }
 
-// ADD REPORT
-document.getElementById("reportForm")
-.addEventListener("submit", function(e) {
+// UPDATE MAP MARKERS
 
+function updateMap() {
+    if (!map || !markerLayer) return;
+
+    markerLayer.clearLayers();
+
+    let filteredIssues = getFilteredIssues();
+
+    filteredIssues.forEach(issue => {
+
+        let color = issue.category === "Pothole"
+            ? "#e74c3c"
+            : "#e6a23c";
+
+        let marker = L.circleMarker(
+            [issue.lat, issue.lng],
+            {
+                radius: 9,
+                color: color,
+                fillColor: color,
+                fillOpacity: 0.85
+            }
+        );
+
+        marker.bindPopup(`
+            <b>${issue.category}</b><br>
+            ${issue.location}<br>
+            Priority: ${issue.priority}<br>
+            Status: ${issue.status}
+        `);
+
+        marker.addTo(markerLayer);
+    });
+}
+
+// ADD NEW REPORT
+
+document.getElementById("reportForm").addEventListener("submit", function(e) {
     e.preventDefault();
 
     let lat = 13.3400 + (Math.random() - 0.5) * 0.012;
@@ -153,34 +207,70 @@ document.getElementById("reportForm")
     });
 
     this.reset();
+
     displayReports();
 });
 
-// RESOLVE REPORT
+// MARK ISSUE AS RESOLVED
+
 function resolveIssue(index) {
     issues[index].status = "Resolved";
     displayReports();
 }
 
-// FILTER REPORTS
+// REOPEN ISSUE
+
+function reopenIssue(index) {
+    issues[index].status = "Pending";
+    displayReports();
+}
+
+// SEARCH AND FILTER EVENTS
+
+document.getElementById("search")
+    .addEventListener("input", displayReports);
+
 document.getElementById("filter")
-.addEventListener("change", displayReports);
+    .addEventListener("change", displayReports);
+
+document.getElementById("priorityFilter")
+    .addEventListener("change", displayReports);
+
+document.getElementById("statusFilter")
+    .addEventListener("change", displayReports);
+
+// CLEAR ALL FILTERS
+
+document.getElementById("clearFilters").addEventListener("click", function() {
+
+    document.getElementById("search").value = "";
+    document.getElementById("filter").value = "All";
+    document.getElementById("priorityFilter").value = "All";
+    document.getElementById("statusFilter").value = "All";
+
+    displayReports();
+});
 
 // SIDEBAR NAVIGATION
+
 document.querySelectorAll(".sidebar a").forEach(link => {
 
     link.addEventListener("click", function() {
 
-        document.querySelectorAll(".sidebar a")
-        .forEach(item => item.classList.remove("active"));
+        document.querySelectorAll(".sidebar a").forEach(item => {
+            item.classList.remove("active");
+        });
 
         this.classList.add("active");
     });
-
 });
 
 // INITIAL DISPLAY
+
 displayReports();
 
 // MAP RESIZE
-setTimeout(() => map.invalidateSize(), 300);
+
+if (map) {
+    setTimeout(() => map.invalidateSize(), 300);
+}
