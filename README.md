@@ -6,8 +6,7 @@ UrbanPulse is a civic issue management platform that connects citizens, administ
 
 ## Live Demo
 
-**Application:** [PASTE YOUR RENDER URL HERE]
-
+**Application:** https://vibecoder-urbanpulse.onrender.com
 **Source Code:** https://github.com/hemanthr-ind/vibecoder-urbanpulse
 
 ## Key Features
