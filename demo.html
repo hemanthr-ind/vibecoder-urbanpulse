@@ -2,301 +2,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>UrbanPulse - Demo 2</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-* {
-    box-sizing: border-box;
-}
+    <title>UrbanPulse - Demo 3</title>
 
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f3f6f8;
-    color: #263238;
-}
+    <link rel="stylesheet" href="style.css">
 
-header {
-    background: #087e75;
-    color: white;
-    padding: 22px 8%;
-}
-
-header h1 {
-    margin: 0;
-}
-
-header p {
-    margin-bottom: 0;
-}
-
-.container {
-    max-width: 950px;
-    margin: 30px auto;
-    padding: 0 18px;
-}
-
-.dashboard {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-    margin-bottom: 25px;
-}
-
-.stat {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    flex: 1;
-    min-width: 150px;
-    box-shadow: 0 2px 8px #0000000d;
-}
-
-.stat h2 {
-    color: #087e75;
-    margin: 5px 0;
-}
-
-.panel {
-    background: white;
-    padding: 22px;
-    border-radius: 10px;
-    margin-bottom: 22px;
-    box-shadow: 0 2px 8px #0000000d;
-}
-
-input, select, textarea {
-    width: 100%;
-    padding: 12px;
-    margin: 8px 0 15px;
-    border: 1px solid #ccd5d8;
-    border-radius: 6px;
-}
-
-button {
-    background: #087e75;
-    color: white;
-    border: none;
-    padding: 12px 18px;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
-button:hover {
-    background: #05665f;
-}
-
-.report {
-    border: 1px solid #e1e7e9;
-    border-left: 5px solid #087e75;
-    padding: 15px;
-    margin: 12px 0;
-    border-radius: 7px;
-    background: #fff;
-}
-
-.priority {
-    padding: 5px 9px;
-    border-radius: 15px;
-    font-size: 12px;
-    font-weight: bold;
-}
-
-.High {
-    background: #ffe0e0;
-    color: #c62828;
-}
-
-.Medium {
-    background: #fff0cc;
-    color: #946000;
-}
-
-.Low {
-    background: #dff5e8;
-    color: #207544;
-}
-
-.status {
-    font-size: 13px;
-    color: #555;
-}
-
-.small-button {
-    padding: 7px 10px;
-    margin-top: 8px;
-    font-size: 12px;
-}
-
-footer {
-    text-align: center;
-    color: #777;
-    padding: 25px;
-}
-</style>
+    <link rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 </head>
 
 <body>
 
 <header>
-    <h1>UrbanPulse</h1>
+    <h2>UrbanPulse</h2>
     <p>See the Issue. Understand the Impact. Prioritise the Action.</p>
-    <small>DEMO VERSION 2 — Priority & Status Management</small>
 </header>
 
-<div class="container">
+<div class="layout">
 
-    <div class="dashboard">
-        <div class="stat">
-            <p>Total Reports</p>
-            <h2 id="total">3</h2>
+    <aside class="sidebar">
+        <h3>MAIN MENU</h3>
+
+        <a href="#dashboard" class="active">▦ Dashboard</a>
+        <a href="#report-section">＋ Report Issue</a>
+        <a href="#issues-section">☷ All Reports</a>
+        <a href="#map-section">📍 Issue Map</a>
+    </aside>
+
+    <main class="main">
+
+        <h2 id="dashboard">Civic Monitoring Dashboard</h2>
+
+        <div class="dashboard">
+
+            <div class="stat">
+                <p>Total Reports</p>
+                <h2 id="total">3</h2>
+            </div>
+
+            <div class="stat">
+                <p>High Priority</p>
+                <h2 id="high">1</h2>
+            </div>
+
+            <div class="stat">
+                <p>Pending Issues</p>
+                <h2 id="pending">2</h2>
+            </div>
+
+            <div class="stat">
+                <p>Resolved Issues</p>
+                <h2 id="resolved">1</h2>
+            </div>
+
         </div>
 
-        <div class="stat">
-            <p>High Priority</p>
-            <h2 id="high">1</h2>
+        <div class="content-grid">
+
+            <div>
+
+                <section class="panel" id="report-section">
+
+                    <h3>Report a Civic Issue</h3>
+
+                    <form id="reportForm">
+
+                        <label>Issue Category</label>
+                        <select id="category">
+                            <option>Pothole</option>
+                            <option>Garbage</option>
+                        </select>
+
+                        <label>Location</label>
+                        <input id="location"
+                        placeholder="Enter location" required>
+
+                        <label>Description</label>
+                        <textarea id="description"
+                        placeholder="Describe the issue" required></textarea>
+
+                        <label>Priority</label>
+                        <select id="priority">
+                            <option>Low</option>
+                            <option selected>Medium</option>
+                            <option>High</option>
+                        </select>
+
+                        <button type="submit">Submit Report</button>
+
+                    </form>
+
+                </section>
+
+                <section class="panel" id="issues-section">
+
+                    <h3>Reported Issues</h3>
+
+                    <label>Filter Reports</label>
+
+                    <select id="filter">
+                        <option value="All">All Issues</option>
+                        <option value="Pothole">Potholes</option>
+                        <option value="Garbage">Garbage</option>
+                    </select>
+
+                    <div id="reports"></div>
+
+                </section>
+
+            </div>
+
+            <section class="panel" id="map-section">
+
+                <h3>Geographical Issue Map</h3>
+
+                <p>Sample civic issue locations around Tumakuru</p>
+
+                <div id="map"></div>
+
+                <div class="map-legend">
+                    <span>🔴 Pothole</span>
+                    <span>🟠 Garbage</span>
+                </div>
+
+                <small>Illustrative demo locations only.</small>
+
+            </section>
+
         </div>
 
-        <div class="stat">
-            <p>Pending Issues</p>
-            <h2 id="pending">2</h2>
-        </div>
-
-        <div class="stat">
-            <p>Resolved Issues</p>
-            <h2 id="resolved">1</h2>
-        </div>
-    </div>
-
-    <div class="panel">
-        <h2>Report a Civic Issue</h2>
-
-        <form id="reportForm">
-            <label>Issue Category</label>
-            <select id="category">
-                <option>Pothole</option>
-                <option>Garbage</option>
-            </select>
-
-            <label>Location</label>
-            <input id="location" placeholder="Enter location" required>
-
-            <label>Description</label>
-            <textarea id="description"
-                placeholder="Describe the issue" required></textarea>
-
-            <label>Priority Level</label>
-            <select id="priority">
-                <option>Low</option>
-                <option selected>Medium</option>
-                <option>High</option>
-            </select>
-
-            <button type="submit">Submit Report</button>
-        </form>
-    </div>
-
-    <div class="panel">
-        <h2>Reported Issues</h2>
-        <div id="reports"></div>
-    </div>
+    </main>
 
 </div>
 
 <footer>
-    UrbanPulse | Student Hackathon Demo | Sample Data Only
+    UrbanPulse | Demo Version 3 | Sample Data Only
 </footer>
 
-<script>
-let issues = [
-    {
-        category: "Pothole",
-        location: "Tumkur Main Road",
-        description: "Large pothole on the road",
-        priority: "High",
-        status: "Pending"
-    },
-    {
-        category: "Garbage",
-        location: "Market Area",
-        description: "Garbage overflowing near the road",
-        priority: "Medium",
-        status: "Pending"
-    },
-    {
-        category: "Pothole",
-        location: "College Road",
-        description: "Small road damage",
-        priority: "Low",
-        status: "Resolved"
-    }
-];
-
-function displayReports() {
-    let reports = document.getElementById("reports");
-    reports.innerHTML = "";
-
-    issues.forEach((issue, index) => {
-        reports.innerHTML += `
-            <div class="report">
-                <h3>${issue.category}</h3>
-                <p><b>Location:</b> ${issue.location}</p>
-                <p>${issue.description}</p>
-
-                <span class="priority ${issue.priority}">
-                    ${issue.priority} Priority
-                </span>
-
-                <p class="status">Status: ${issue.status}</p>
-
-                ${issue.status === "Pending" ?
-                    `<button class="small-button"
-                    onclick="resolveIssue(${index})">
-                    Mark as Resolved</button>` : ""}
-            </div>
-        `;
-    });
-
-    updateDashboard();
-}
-
-function updateDashboard() {
-    document.getElementById("total").textContent = issues.length;
-
-    document.getElementById("high").textContent =
-        issues.filter(i => i.priority === "High").length;
-
-    document.getElementById("pending").textContent =
-        issues.filter(i => i.status === "Pending").length;
-
-    document.getElementById("resolved").textContent =
-        issues.filter(i => i.status === "Resolved").length;
-}
-
-document.getElementById("reportForm").addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    issues.unshift({
-        category: document.getElementById("category").value,
-        location: document.getElementById("location").value,
-        description: document.getElementById("description").value,
-        priority: document.getElementById("priority").value,
-        status: "Pending"
-    });
-
-    this.reset();
-    displayReports();
-});
-
-function resolveIssue(index) {
-    issues[index].status = "Resolved";
-    displayReports();
-}
-
-displayReports();
-</script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="script.js"></script>
 
 </body>
 </html>
