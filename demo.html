@@ -1,123 +1,302 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>UrbanPulse Demo</title>
-    <style>
-        body {
-            font-family: Arial;
-            background: #f2f5f5;
-            margin: 0;
-            color: #222;
-        }
-        header {
-            background: #123b46;
-            color: white;
-            padding: 25px;
-        }
-        main {
-            margin: 30px auto;
-            max-width: 700px;
-            padding: 15px;
-        }
-        section {
-            background: white;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-        }
-        input, select, textarea {
-            width: 95%;
-            padding: 10px;
-            margin: 8px 0;
-        }
-        button {
-            background: #087f8c;
-            color: white;
-            border: none;
-            padding: 12px;
-            cursor: pointer;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UrbanPulse - Demo 2</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f3f6f8;
+    color: #263238;
+}
+
+header {
+    background: #087e75;
+    color: white;
+    padding: 22px 8%;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header p {
+    margin-bottom: 0;
+}
+
+.container {
+    max-width: 950px;
+    margin: 30px auto;
+    padding: 0 18px;
+}
+
+.dashboard {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+}
+
+.stat {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1;
+    min-width: 150px;
+    box-shadow: 0 2px 8px #0000000d;
+}
+
+.stat h2 {
+    color: #087e75;
+    margin: 5px 0;
+}
+
+.panel {
+    background: white;
+    padding: 22px;
+    border-radius: 10px;
+    margin-bottom: 22px;
+    box-shadow: 0 2px 8px #0000000d;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 15px;
+    border: 1px solid #ccd5d8;
+    border-radius: 6px;
+}
+
+button {
+    background: #087e75;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #05665f;
+}
+
+.report {
+    border: 1px solid #e1e7e9;
+    border-left: 5px solid #087e75;
+    padding: 15px;
+    margin: 12px 0;
+    border-radius: 7px;
+    background: #fff;
+}
+
+.priority {
+    padding: 5px 9px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.High {
+    background: #ffe0e0;
+    color: #c62828;
+}
+
+.Medium {
+    background: #fff0cc;
+    color: #946000;
+}
+
+.Low {
+    background: #dff5e8;
+    color: #207544;
+}
+
+.status {
+    font-size: 13px;
+    color: #555;
+}
+
+.small-button {
+    padding: 7px 10px;
+    margin-top: 8px;
+    font-size: 12px;
+}
+
+footer {
+    text-align: center;
+    color: #777;
+    padding: 25px;
+}
+</style>
 </head>
+
 <body>
 
 <header>
-    <h1>UrbanPulsee</h1>
-    <p>Report problems. Improve our city.</p>
+    <h1>UrbanPulse</h1>
+    <p>See the Issue. Understand the Impact. Prioritise the Action.</p>
+    <small>DEMO VERSION 2 — Priority & Status Management</small>
 </header>
 
-<main>
-    <section>
-        <h2>Report a Problem</h2>
+<div class="container">
 
-        <input id="location" placeholder="Enter location">
+    <div class="dashboard">
+        <div class="stat">
+            <p>Total Reports</p>
+            <h2 id="total">3</h2>
+        </div>
 
-        <select id="problem">
-            <option>Pothole</option>
-            <option>Garbage</option>
-        </select>
+        <div class="stat">
+            <p>High Priority</p>
+            <h2 id="high">1</h2>
+        </div>
 
-        <textarea id="description"
-        placeholder="Describe the problem"></textarea>
+        <div class="stat">
+            <p>Pending Issues</p>
+            <h2 id="pending">2</h2>
+        </div>
 
-        <button onclick="reportProblem()">
-            Submit Report
-        </button>
-    </section>
+        <div class="stat">
+            <p>Resolved Issues</p>
+            <h2 id="resolved">1</h2>
+        </div>
+    </div>
 
-    <section>
-        <h2>Recent Reports</h2>
-        <ul id="reports">
-            <li>Pothole - Main Road</li>
-            <li>Garbage - Bus Stand</li>
-        </ul>
-    </section>
+    <div class="panel">
+        <h2>Report a Civic Issue</h2>
 
-    <section>
-        <h2>Dashboard</h2>
-        <p>Total Reports: <span id="total">2</span></p>
-        <p>Status: Demo Mode</p>
-    </section>
-</main>
+        <form id="reportForm">
+            <label>Issue Category</label>
+            <select id="category">
+                <option>Pothole</option>
+                <option>Garbage</option>
+            </select>
+
+            <label>Location</label>
+            <input id="location" placeholder="Enter location" required>
+
+            <label>Description</label>
+            <textarea id="description"
+                placeholder="Describe the issue" required></textarea>
+
+            <label>Priority Level</label>
+            <select id="priority">
+                <option>Low</option>
+                <option selected>Medium</option>
+                <option>High</option>
+            </select>
+
+            <button type="submit">Submit Report</button>
+        </form>
+    </div>
+
+    <div class="panel">
+        <h2>Reported Issues</h2>
+        <div id="reports"></div>
+    </div>
+
+</div>
+
+<footer>
+    UrbanPulse | Student Hackathon Demo | Sample Data Only
+</footer>
 
 <script>
-    let count = 2;
-
-    function reportProblem() {
-        let location =
-            document.getElementById("location").value;
-
-        let problem =
-            document.getElementById("problem").value;
-
-        let description =
-            document.getElementById("description").value;
-
-        if (!location || !description) {
-            alert("Fill all details!");
-            return;
-        }
-
-        let item = document.createElement("li");
-        item.textContent =
-            problem + " - " + location + ": " + description;
-
-        document.getElementById("reports")
-            .appendChild(item);
-
-        count++;
-
-        document.getElementById("total")
-            .textContent = count;
-
-        alert("Demo report submitted!");
-
-        document.getElementById("location").value = "";
-        document.getElementById("description").value = "";
+let issues = [
+    {
+        category: "Pothole",
+        location: "Tumkur Main Road",
+        description: "Large pothole on the road",
+        priority: "High",
+        status: "Pending"
+    },
+    {
+        category: "Garbage",
+        location: "Market Area",
+        description: "Garbage overflowing near the road",
+        priority: "Medium",
+        status: "Pending"
+    },
+    {
+        category: "Pothole",
+        location: "College Road",
+        description: "Small road damage",
+        priority: "Low",
+        status: "Resolved"
     }
+];
+
+function displayReports() {
+    let reports = document.getElementById("reports");
+    reports.innerHTML = "";
+
+    issues.forEach((issue, index) => {
+        reports.innerHTML += `
+            <div class="report">
+                <h3>${issue.category}</h3>
+                <p><b>Location:</b> ${issue.location}</p>
+                <p>${issue.description}</p>
+
+                <span class="priority ${issue.priority}">
+                    ${issue.priority} Priority
+                </span>
+
+                <p class="status">Status: ${issue.status}</p>
+
+                ${issue.status === "Pending" ?
+                    `<button class="small-button"
+                    onclick="resolveIssue(${index})">
+                    Mark as Resolved</button>` : ""}
+            </div>
+        `;
+    });
+
+    updateDashboard();
+}
+
+function updateDashboard() {
+    document.getElementById("total").textContent = issues.length;
+
+    document.getElementById("high").textContent =
+        issues.filter(i => i.priority === "High").length;
+
+    document.getElementById("pending").textContent =
+        issues.filter(i => i.status === "Pending").length;
+
+    document.getElementById("resolved").textContent =
+        issues.filter(i => i.status === "Resolved").length;
+}
+
+document.getElementById("reportForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    issues.unshift({
+        category: document.getElementById("category").value,
+        location: document.getElementById("location").value,
+        description: document.getElementById("description").value,
+        priority: document.getElementById("priority").value,
+        status: "Pending"
+    });
+
+    this.reset();
+    displayReports();
+});
+
+function resolveIssue(index) {
+    issues[index].status = "Resolved";
+    displayReports();
+}
+
+displayReports();
 </script>
 
 </body>
 </html>
-
