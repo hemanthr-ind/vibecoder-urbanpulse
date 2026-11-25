@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>UrbanPulse Demo</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f2f5f5;
+            margin: 0;
+            color: #222;
+        }
+        header {
+            background: #123b46;
+            color: white;
+            padding: 25px;
+        }
+        main {
+            margin: 30px auto;
+            max-width: 700px;
+            padding: 15px;
+        }
+        section {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        input, select, textarea {
+            width: 95%;
+            padding: 10px;
+            margin: 8px 0;
+        }
+        button {
+            background: #087f8c;
+            color: white;
+            border: none;
+            padding: 12px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>UrbanPulsee</h1>
+    <p>Report problems. Improve our city.</p>
+</header>
+
+<main>
+    <section>
+        <h2>Report a Problem</h2>
+
+        <input id="location" placeholder="Enter location">
+
+        <select id="problem">
+            <option>Pothole</option>
+            <option>Garbage</option>
+        </select>
+
+        <textarea id="description"
+        placeholder="Describe the problem"></textarea>
+
+        <button onclick="reportProblem()">
+            Submit Report
+        </button>
+    </section>
+
+    <section>
+        <h2>Recent Reports</h2>
+        <ul id="reports">
+            <li>Pothole - Main Road</li>
+            <li>Garbage - Bus Stand</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Dashboard</h2>
+        <p>Total Reports: <span id="total">2</span></p>
+        <p>Status: Demo Mode</p>
+    </section>
+</main>
+
+<script>
+    let count = 2;
+
+    function reportProblem() {
+        let location =
+            document.getElementById("location").value;
+
+        let problem =
+            document.getElementById("problem").value;
+
+        let description =
+            document.getElementById("description").value;
+
+        if (!location || !description) {
+            alert("Fill all details!");
+            return;
+        }
+
+        let item = document.createElement("li");
+        item.textContent =
+            problem + " - " + location + ": " + description;
+
+        document.getElementById("reports")
+            .appendChild(item);
+
+        count++;
+
+        document.getElementById("total")
+            .textContent = count;
+
+        alert("Demo report submitted!");
+
+        document.getElementById("location").value = "";
+        document.getElementById("description").value = "";
+    }
+</script>
+
+</body>
+</html>
+
