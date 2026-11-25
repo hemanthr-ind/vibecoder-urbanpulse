@@ -1,0 +1,6 @@
+{
+  "name": "UrbanPulse AI",
+  "description": "Intelligent civic infrastructure monitoring, AI visual assessment, and GIS priority management platform for Tumakuru.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,1877 @@
+{
+  "users": [
+    {
+      "user_id": "usr-citizen-demo",
+      "name": "Ananya Rao",
+      "email": "citizen.tumakuru@urbanpulse.local",
+      "role": "CITIZEN",
+      "status": "ACTIVE",
+      "created_at": "2026-10-25T12:00:00.000Z",
+      "passwordHash": null
+    },
+    {
+      "user_id": "usr-officer-1",
+      "name": "Karthik Gowda",
+      "email": "karthik.officer@tumakuru.civic",
+      "role": "FIELD_OFFICER",
+      "status": "ACTIVE",
+      "created_at": "2026-09-25T12:00:00.000Z",
+      "zone": "B.H. Road & Town Hall Sector",
+      "passwordHash": null
+    },
+    {
+      "user_id": "usr-officer-2",
+      "name": "Meghana Hegde",
+      "email": "meghana.officer@tumakuru.civic",
+      "role": "FIELD_OFFICER",
+      "status": "ACTIVE",
+      "created_at": "2026-09-25T12:00:00.000Z",
+      "zone": "S.S. Puram & Siddaganga Sector",
+      "passwordHash": null
+    }
+  ],
+  "officers": [
+    {
+      "officer_id": "off-1",
+      "user_id": "usr-officer-1",
+      "name": "Karthik Gowda",
+      "email": "karthik.officer@tumakuru.civic",
+      "badge_code": "TMK-FO-104",
+      "zone": "B.H. Road & Town Hall Sector",
+      "availability": "ON_FIELD_DUTY",
+      "active_task_count": 2,
+      "completed_task_count": 14,
+      "avg_resolution_hours": 18.4
+    },
+    {
+      "officer_id": "off-2",
+      "user_id": "usr-officer-2",
+      "name": "Meghana Hegde",
+      "email": "meghana.officer@tumakuru.civic",
+      "badge_code": "TMK-FO-112",
+      "zone": "S.S. Puram & Siddaganga Sector",
+      "availability": "AVAILABLE",
+      "active_task_count": 1,
+      "completed_task_count": 19,
+      "avg_resolution_hours": 14.2
+    }
+  ],
+  "reports": [
+    {
+      "report_id": "REP-TMK-1001",
+      "report_reference": "UP-TMK-1001",
+      "submitted_by_user_id": "usr-citizen-demo",
+      "submitted_by_label": "Ananya Rao",
+      "user_selected_category": "POTHOLE",
+      "description": "Large water-filled pothole right on the center lane marking near Town Hall Circle.",
+      "additional_info": "Heavy two-wheeler braking hazard during evening rush.",
+      "location_label": "B.H. Road near Town Hall Circle, Tumakuru",
+      "submitted_at": "2026-11-18T08:00:00.000Z",
+      "updated_at": "2026-11-23T12:00:00.000Z",
+      "ai_processing_status": "COMPLETED",
+      "human_verification_status": "VERIFIED",
+      "operational_status": "IN_PROGRESS",
+      "physical_issue_id": "ISS-TMK-2026-001",
+      "evidence_assets": [
+        {
+          "evidence_id": "ev-1001",
+          "report_id": "REP-TMK-1001",
+          "url": "/src/assets/images/pothole_bh_road_1795571244359.jpg",
+          "mime_type": "image/jpeg",
+          "file_name_safe": "bh_road_pothole.jpg",
+          "width": 1200,
+          "height": 900,
+          "captured_at": "2026-11-18T08:00:00.000Z",
+          "uploaded_at": "2026-11-18T08:00:00.000Z",
+          "kind": "CITIZEN_REPORT"
+        }
+      ],
+      "location_observation": {
+        "location_observation_id": "loc-1",
+        "report_id": "REP-TMK-1001",
+        "physical_issue_id": "ISS-TMK-2026-001",
+        "latitude": 13.3409,
+        "longitude": 77.1014,
+        "horizontal_accuracy_meters": 7,
+        "coordinate_reference_system": "EPSG:4326",
+        "location_source": "VERIFIED_REVIEWER_CORRECTION",
+        "location_meaning": "ISSUE_LOCATION",
+        "human_readable_label": "B.H. Road near Town Hall Circle, Tumakuru",
+        "captured_at": "2026-11-18T08:00:00.000Z",
+        "recorded_at": "2026-11-18T08:00:00.000Z",
+        "confirmed_by_user": true,
+        "verified_by_authorized_reviewer": true,
+        "validation_status": "VALID_EXACT_OR_HIGH_PRECISION",
+        "precision_band": "HIGH",
+        "jurisdiction_status": "INSIDE_OPERATING_EXTENT_UNVERIFIED_BOUNDARY",
+        "supersedes_location_observation_id": null
+      },
+      "ai_analysis": {
+        "analysis_id": "ai-1001",
+        "report_id": "REP-TMK-1001",
+        "schema_version": "1.0",
+        "analysis_status": "SUCCESS",
+        "analysis_mode": "VISION_ONLY",
+        "started_at": "2026-11-18T08:00:00.000Z",
+        "completed_at": "2026-11-18T08:00:00.000Z",
+        "image_assessment": {
+          "relevance_status": "CIVIC_RELEVANT_SUPPORTED",
+          "relevance_reason": "Clear road surface cavity with fractured asphalt edges and pooled rainwater.",
+          "image_quality_status": "GOOD",
+          "quality_issues": [
+            "Water pooling partially obscures cavity base depth"
+          ],
+          "screenshot_or_rephotographed_evidence": false,
+          "image_integrity_status": "NO_CONCERN_IDENTIFIED",
+          "user_category_match_status": "MATCH",
+          "user_description_match_status": "CONSISTENT",
+          "manual_review_required": false
+        },
+        "detected_classes": [
+          "POTHOLE"
+        ],
+        "detections": [
+          {
+            "detection_id": "det_001",
+            "source_image_id": "ev-1001",
+            "physical_issue_id": "ISS-TMK-2026-001",
+            "class_id": "POTHOLE",
+            "original_detector_class_label": null,
+            "class_display_label": "Pothole",
+            "detection_status": "ACCEPTED_DETECTION",
+            "raw_confidence": null,
+            "normalized_confidence": null,
+            "confidence_percent": null,
+            "confidence_band": "UNAVAILABLE",
+            "calibration_status": "NOT_APPLICABLE",
+            "localization_status": "NOT_PROVIDED_BY_DETECTOR",
+            "localization_source": "NOT_PROVIDED_BY_DETECTOR",
+            "bounding_box_normalized": null,
+            "visible_description": "Extensive circular asphalt cavity with fractured aggregate perimeter and standing water.",
+            "supporting_evidence": [
+              "Fractured road edges",
+              "Exposed sub-base gravel",
+              "Central travel-lane location"
+            ],
+            "counter_evidence": [
+              "Depth cannot be measured precisely due to standing rainwater"
+            ],
+            "severity_assessment": {
+              "status": "ASSESSED",
+              "score": 86,
+              "label": "CRITICAL",
+              "rubric_id": "POTHOLE_RUBRIC_V1",
+              "rubric_version": "1.0-provisional",
+              "dimension_scores": {
+                "apparent_extent": 88,
+                "surface_breakdown": 90,
+                "apparent_depth_indicators": 80,
+                "edge_condition": 85,
+                "travel_surface_position": 92,
+                "concealment_visibility": 78
+              },
+              "dimension_weights": {
+                "apparent_extent": 20,
+                "surface_breakdown": 20,
+                "apparent_depth_indicators": 15,
+                "edge_condition": 15,
+                "travel_surface_position": 15,
+                "concealment_visibility": 10,
+                "other_risk_indicators": 5
+              },
+              "available_dimension_coverage": 0.95,
+              "evidence_summary": "Large broken asphalt cavity in active lane with water concealment.",
+              "missing_evidence": [
+                "Exact physical depth in centimetres"
+              ],
+              "assessment_uncertainty": "Water inside cavity conceals exact floor depth.",
+              "human_review_recommended": true
+            },
+            "public_impact_assessment": {
+              "status": "ASSESSED",
+              "score": 82,
+              "dimension_scores": {
+                "road_user_exposure": 88,
+                "obstruction_access": 76,
+                "essential_function": 80,
+                "visible_consequence": 84
+              },
+              "dimension_weights": {
+                "road_user_exposure": 25,
+                "obstruction_access": 25,
+                "essential_function": 20,
+                "visible_consequence": 20,
+                "affected_breadth": 10
+              },
+              "available_dimension_coverage": 0.9,
+              "evidence_summary": "Positioned in primary carriageway lane used by two-wheelers and autos.",
+              "verified_context_used": [
+                "B.H. Road arterial corridor"
+              ],
+              "unknown_context": [
+                "Exact hourly traffic count"
+              ],
+              "assessment_uncertainty": "Traffic volume inferred visually from surrounding vehicles only."
+            },
+            "uncertainty_flags": [
+              "DETECTOR_UNAVAILABLE_VISION_ONLY",
+              "WATER_CONCEALED_DEPTH"
+            ],
+            "verification_status": "VERIFIED"
+          }
+        ],
+        "other_civic_candidates": [],
+        "verification_recommendation": {
+          "recommendation": "REVIEW_RECOMMENDED",
+          "reason_codes": [
+            "SAFETY_REVIEW_RECOMMENDED",
+            "DETECTOR_UNAVAILABLE"
+          ],
+          "reason_summary": "High-severity cavity in active carriageway; verified by municipal reviewer.",
+          "additional_evidence_requested": []
+        },
+        "uncertainty_and_warnings": [
+          "Vision-language assessment mode active; dedicated bounding-box detector not connected."
+        ],
+        "model_metadata": {
+          "vision_model_name": "gemini-4-hydrogen",
+          "vision_model_version": "v1",
+          "detector_name": null,
+          "detector_version": null,
+          "calibration_status": "NOT_APPLICABLE_VISION_ONLY",
+          "prompt_version": "urbanpulse-master-v1.0",
+          "severity_rubric_version": "1.0-provisional",
+          "priority_formula_version": "up-priority-v1.0"
+        }
+      },
+      "timeline": [
+        {
+          "event_id": "tl-1a",
+          "step": "Submitted",
+          "status": "SUBMITTED",
+          "actor_label": "Ananya Rao",
+          "occurred_at": "2026-11-18T08:00:00.000Z",
+          "detail": "Citizen submitted report with GPS pin."
+        },
+        {
+          "event_id": "tl-1b",
+          "step": "Analysis Complete",
+          "status": "COMPLETED",
+          "actor_label": "UrbanPulse AI",
+          "occurred_at": "2026-11-18T08:00:00.000Z",
+          "detail": "Vision assessment identified Critical Pothole (Severity 86)."
+        },
+        {
+          "event_id": "tl-1c",
+          "step": "Verified",
+          "status": "VERIFIED",
+          "actor_label": "Municipal Reviewer",
+          "occurred_at": "2026-11-19T06:00:00.000Z",
+          "detail": "Verified physical issue and confirmed B.H. Road coordinate."
+        },
+        {
+          "event_id": "tl-1d",
+          "step": "Assigned",
+          "status": "ASSIGNED",
+          "actor_label": "Admin Command",
+          "occurred_at": "2026-11-19T12:00:00.000Z",
+          "detail": "Assigned to Field Officer Karthik Gowda."
+        },
+        {
+          "event_id": "tl-1e",
+          "step": "In Progress",
+          "status": "IN_PROGRESS",
+          "actor_label": "Karthik Gowda",
+          "occurred_at": "2026-11-23T12:00:00.000Z",
+          "detail": "Site barricaded; repair crew scheduled."
+        }
+      ],
+      "is_demo_seed": true
+    },
+    {
+      "report_id": "REP-TMK-1002",
+      "report_reference": "UP-TMK-1002",
+      "submitted_by_user_id": "usr-citizen-demo",
+      "submitted_by_label": "Ananya Rao",
+      "user_selected_category": "GARBAGE_OR_WASTE",
+      "description": "Dumped plastic bags and loose wrappers overflowing right next to the storm water drain grate.",
+      "additional_info": "Blocks drainage inflow during rain.",
+      "location_label": "Mandi Pete Market Lane, Tumakuru",
+      "submitted_at": "2026-11-21T10:00:00.000Z",
+      "updated_at": "2026-11-22T12:00:00.000Z",
+      "ai_processing_status": "COMPLETED",
+      "human_verification_status": "VERIFIED",
+      "operational_status": "ASSIGNED",
+      "physical_issue_id": "ISS-TMK-2026-002",
+      "evidence_assets": [
+        {
+          "evidence_id": "ev-1002",
+          "report_id": "REP-TMK-1002",
+          "url": "/src/assets/images/garbage_drain_overflow_1795571245273.jpg",
+          "mime_type": "image/jpeg",
+          "file_name_safe": "mandi_pete_drain_waste.jpg",
+          "width": 1200,
+          "height": 900,
+          "captured_at": "2026-11-21T10:00:00.000Z",
+          "uploaded_at": "2026-11-21T10:00:00.000Z",
+          "kind": "CITIZEN_REPORT"
+        }
+      ],
+      "location_observation": {
+        "location_observation_id": "loc-2",
+        "report_id": "REP-TMK-1002",
+        "physical_issue_id": "ISS-TMK-2026-002",
+        "latitude": 13.3442,
+        "longitude": 77.1135,
+        "horizontal_accuracy_meters": 11,
+        "coordinate_reference_system": "EPSG:4326",
+        "location_source": "USER_CONFIRMED_DEVICE_GPS",
+        "location_meaning": "ISSUE_LOCATION",
+        "human_readable_label": "Mandi Pete Market Lane, Tumakuru",
+        "captured_at": "2026-11-21T10:00:00.000Z",
+        "recorded_at": "2026-11-21T10:00:00.000Z",
+        "confirmed_by_user": true,
+        "verified_by_authorized_reviewer": true,
+        "validation_status": "VALID_EXACT_OR_HIGH_PRECISION",
+        "precision_band": "GOOD",
+        "jurisdiction_status": "INSIDE_OPERATING_EXTENT_UNVERIFIED_BOUNDARY",
+        "supersedes_location_observation_id": null
+      },
+      "ai_analysis": {
+        "analysis_id": "ai-1002",
+        "report_id": "REP-TMK-1002",
+        "schema_version": "1.0",
+        "analysis_status": "SUCCESS",
+        "analysis_mode": "VISION_ONLY",
+        "started_at": "2026-11-21T10:00:00.000Z",
+        "completed_at": "2026-11-21T10:00:00.000Z",
+        "image_assessment": {
+          "relevance_status": "CIVIC_RELEVANT_SUPPORTED",
+          "relevance_reason": "Visible accumulation of bagged and loose plastic waste adjacent to storm drain grate.",
+          "image_quality_status": "GOOD",
+          "quality_issues": [],
+          "screenshot_or_rephotographed_evidence": false,
+          "image_integrity_status": "NO_CONCERN_IDENTIFIED",
+          "user_category_match_status": "MATCH",
+          "user_description_match_status": "CONSISTENT",
+          "manual_review_required": false
+        },
+        "detected_classes": [
+          "GARBAGE_OR_WASTE"
+        ],
+        "detections": [
+          {
+            "detection_id": "det_002",
+            "source_image_id": "ev-1002",
+            "physical_issue_id": "ISS-TMK-2026-002",
+            "class_id": "GARBAGE_OR_WASTE",
+            "original_detector_class_label": null,
+            "class_display_label": "Garbage / Waste",
+            "detection_status": "ACCEPTED_DETECTION",
+            "raw_confidence": null,
+            "normalized_confidence": null,
+            "confidence_percent": null,
+            "confidence_band": "UNAVAILABLE",
+            "calibration_status": "NOT_APPLICABLE",
+            "localization_status": "NOT_PROVIDED_BY_DETECTOR",
+            "localization_source": "NOT_PROVIDED_BY_DETECTOR",
+            "bounding_box_normalized": null,
+            "visible_description": "Mixed refuse bags and plastic packaging piled beside and partially inside storm drain.",
+            "supporting_evidence": [
+              "Tied waste bags",
+              "Plastic bottles & wrappers over drain grate",
+              "Footpath encroachment"
+            ],
+            "counter_evidence": [
+              "Waste composition toxicity unknown from visual inspection alone"
+            ],
+            "severity_assessment": {
+              "status": "ASSESSED",
+              "score": 71,
+              "label": "HIGH",
+              "rubric_id": "GARBAGE_RUBRIC_V1",
+              "rubric_version": "1.0-provisional",
+              "dimension_scores": {
+                "accumulation_extent": 68,
+                "waste_concentration": 74,
+                "public_space_obstruction": 65,
+                "drainage_obstruction": 82,
+                "spread_dispersal": 66
+              },
+              "dimension_weights": {
+                "accumulation_extent": 20,
+                "waste_concentration": 15,
+                "public_space_obstruction": 20,
+                "drainage_obstruction": 15,
+                "spread_dispersal": 15,
+                "sensitive_proximity": 10,
+                "other_concerns": 5
+              },
+              "available_dimension_coverage": 0.85,
+              "evidence_summary": "Concentrated waste pile visibly encroaching on roadside drain opening.",
+              "missing_evidence": [
+                "Material toxicity / chemical composition"
+              ],
+              "assessment_uncertainty": "Sub-surface drain pipe blockage cannot be confirmed from surface photo.",
+              "human_review_recommended": false
+            },
+            "public_impact_assessment": {
+              "status": "ASSESSED",
+              "score": 76,
+              "dimension_scores": {
+                "road_user_exposure": 72,
+                "obstruction_access": 78,
+                "essential_function": 80,
+                "visible_consequence": 74
+              },
+              "dimension_weights": {
+                "road_user_exposure": 25,
+                "obstruction_access": 25,
+                "essential_function": 20,
+                "visible_consequence": 20,
+                "affected_breadth": 10
+              },
+              "available_dimension_coverage": 0.9,
+              "evidence_summary": "Pedestrian walkway edge narrowed and storm drainage function impeded.",
+              "verified_context_used": [
+                "Mandi Pete Market Lane"
+              ],
+              "unknown_context": [
+                "Pedestrian footfall count"
+              ],
+              "assessment_uncertainty": "None critical."
+            },
+            "uncertainty_flags": [
+              "DETECTOR_UNAVAILABLE_VISION_ONLY"
+            ],
+            "verification_status": "VERIFIED"
+          }
+        ],
+        "other_civic_candidates": [],
+        "verification_recommendation": {
+          "recommendation": "NOT_REQUIRED_UNDER_CONFIGURED_POLICY",
+          "reason_codes": [
+            "DETECTOR_UNAVAILABLE"
+          ],
+          "reason_summary": "Verified waste accumulation near storm drain.",
+          "additional_evidence_requested": []
+        },
+        "uncertainty_and_warnings": [
+          "Vision-language assessment mode active; dedicated bounding-box detector not connected."
+        ],
+        "model_metadata": {
+          "vision_model_name": "gemini-4-hydrogen",
+          "vision_model_version": "v1",
+          "detector_name": null,
+          "detector_version": null,
+          "calibration_status": "NOT_APPLICABLE_VISION_ONLY",
+          "prompt_version": "urbanpulse-master-v1.0",
+          "severity_rubric_version": "1.0-provisional",
+          "priority_formula_version": "up-priority-v1.0"
+        }
+      },
+      "timeline": [
+        {
+          "event_id": "tl-2a",
+          "step": "Submitted",
+          "status": "SUBMITTED",
+          "actor_label": "Ananya Rao",
+          "occurred_at": "2026-11-21T10:00:00.000Z",
+          "detail": "Report submitted with GPS location."
+        },
+        {
+          "event_id": "tl-2b",
+          "step": "Analysis Complete",
+          "status": "COMPLETED",
+          "actor_label": "UrbanPulse AI",
+          "occurred_at": "2026-11-21T10:00:00.000Z",
+          "detail": "High severity garbage accumulation (Score 71)."
+        },
+        {
+          "event_id": "tl-2c",
+          "step": "Verified",
+          "status": "VERIFIED",
+          "actor_label": "Municipal Reviewer",
+          "occurred_at": "2026-11-22T08:00:00.000Z",
+          "detail": "Verified by sanitation review desk."
+        },
+        {
+          "event_id": "tl-2d",
+          "step": "Assigned",
+          "status": "ASSIGNED",
+          "actor_label": "Admin Command",
+          "occurred_at": "2026-11-22T12:00:00.000Z",
+          "detail": "Assigned to Karthik Gowda."
+        }
+      ],
+      "is_demo_seed": true
+    },
+    {
+      "report_id": "REP-TMK-1003",
+      "report_reference": "UP-TMK-1003",
+      "submitted_by_user_id": "usr-citizen-demo",
+      "submitted_by_label": "Ananya Rao",
+      "user_selected_category": "POTHOLE",
+      "description": "Two potholes right next to the curb at S.S. Puram bus stop area.",
+      "additional_info": "Reported from footpath (~32m GPS radius).",
+      "location_label": "S.S. Puram Main Road Bus Stop, Tumakuru",
+      "submitted_at": "2026-11-22T06:00:00.000Z",
+      "updated_at": "2026-11-22T06:00:00.000Z",
+      "ai_processing_status": "COMPLETED",
+      "human_verification_status": "REVIEW_RECOMMENDED",
+      "operational_status": "PENDING_VERIFICATION",
+      "physical_issue_id": "ISS-TMK-2026-003",
+      "evidence_assets": [
+        {
+          "evidence_id": "ev-1003",
+          "report_id": "REP-TMK-1003",
+          "url": "/src/assets/images/pothole_junction_crack_1795571244093.jpg",
+          "mime_type": "image/jpeg",
+          "file_name_safe": "ss_puram_potholes.jpg",
+          "width": 1200,
+          "height": 900,
+          "captured_at": "2026-11-22T06:00:00.000Z",
+          "uploaded_at": "2026-11-22T06:00:00.000Z",
+          "kind": "CITIZEN_REPORT"
+        }
+      ],
+      "location_observation": {
+        "location_observation_id": "loc-3",
+        "report_id": "REP-TMK-1003",
+        "physical_issue_id": "ISS-TMK-2026-003",
+        "latitude": 13.3328,
+        "longitude": 77.1182,
+        "horizontal_accuracy_meters": 32,
+        "coordinate_reference_system": "EPSG:4326",
+        "location_source": "DEVICE_GPS",
+        "location_meaning": "REPORT_OBSERVATION_LOCATION",
+        "human_readable_label": "S.S. Puram Main Road Bus Stop, Tumakuru",
+        "captured_at": "2026-11-22T06:00:00.000Z",
+        "recorded_at": "2026-11-22T06:00:00.000Z",
+        "confirmed_by_user": true,
+        "verified_by_authorized_reviewer": false,
+        "validation_status": "VALID_APPROXIMATE",
+        "precision_band": "FAIR",
+        "jurisdiction_status": "INSIDE_OPERATING_EXTENT_UNVERIFIED_BOUNDARY",
+        "supersedes_location_observation_id": null
+      },
+      "ai_analysis": {
+        "analysis_id": "ai-1003",
+        "report_id": "REP-TMK-1003",
+        "schema_version": "1.0",
+        "analysis_status": "REQUIRES_REVIEW",
+        "analysis_mode": "VISION_ONLY",
+        "started_at": "2026-11-22T06:00:00.000Z",
+        "completed_at": "2026-11-22T06:00:00.000Z",
+        "image_assessment": {
+          "relevance_status": "CIVIC_RELEVANT_SUPPORTED",
+          "relevance_reason": "Two separate asphalt depressions visible near curb lane.",
+          "image_quality_status": "GOOD",
+          "quality_issues": [],
+          "screenshot_or_rephotographed_evidence": false,
+          "image_integrity_status": "NO_CONCERN_IDENTIFIED",
+          "user_category_match_status": "MATCH",
+          "user_description_match_status": "CONSISTENT",
+          "manual_review_required": true
+        },
+        "detected_classes": [
+          "POTHOLE"
+        ],
+        "detections": [
+          {
+            "detection_id": "det_003a",
+            "source_image_id": "ev-1003",
+            "physical_issue_id": "ISS-TMK-2026-003",
+            "class_id": "POTHOLE",
+            "original_detector_class_label": null,
+            "class_display_label": "Pothole (Curb Cavity A)",
+            "detection_status": "ACCEPTED_REQUIRES_REVIEW",
+            "raw_confidence": null,
+            "normalized_confidence": null,
+            "confidence_percent": null,
+            "confidence_band": "UNAVAILABLE",
+            "calibration_status": "NOT_APPLICABLE",
+            "localization_status": "NOT_PROVIDED_BY_DETECTOR",
+            "localization_source": "NOT_PROVIDED_BY_DETECTOR",
+            "bounding_box_normalized": null,
+            "visible_description": "Shallow curb-side road depression holding rainwater.",
+            "supporting_evidence": [
+              "Cracked asphalt edge near gutter"
+            ],
+            "counter_evidence": [
+              "Limited depth visible"
+            ],
+            "severity_assessment": {
+              "status": "ASSESSED",
+              "score": 44,
+              "label": "MODERATE",
+              "rubric_id": "POTHOLE_RUBRIC_V1",
+              "rubric_version": "1.0-provisional",
+              "dimension_scores": {
+                "apparent_extent": 46,
+                "surface_breakdown": 48,
+                "apparent_depth_indicators": 38
+              },
+              "dimension_weights": {
+                "apparent_extent": 20,
+                "surface_breakdown": 20,
+                "apparent_depth_indicators": 15
+              },
+              "available_dimension_coverage": 0.75,
+              "evidence_summary": "Moderate curb-edge surface deterioration across two adjacent cavities.",
+              "missing_evidence": [
+                "Exact individual object coordinates"
+              ],
+              "assessment_uncertainty": "Single report GPS observation covers both adjacent defects.",
+              "human_review_recommended": true
+            },
+            "public_impact_assessment": {
+              "status": "ASSESSED",
+              "score": 58,
+              "dimension_scores": {
+                "road_user_exposure": 60,
+                "obstruction_access": 56
+              },
+              "dimension_weights": {
+                "road_user_exposure": 25,
+                "obstruction_access": 25
+              },
+              "available_dimension_coverage": 0.7,
+              "evidence_summary": "Located at bus boarding shoulder.",
+              "verified_context_used": [],
+              "unknown_context": [
+                "Official route importance unavailable"
+              ],
+              "assessment_uncertainty": "Geographical importance not verified."
+            },
+            "uncertainty_flags": [
+              "MULTI_OBJECT_SINGLE_GPS",
+              "PROVISIONAL_PRIORITY"
+            ],
+            "verification_status": "REVIEW_RECOMMENDED"
+          },
+          {
+            "detection_id": "det_003b",
+            "source_image_id": "ev-1003",
+            "physical_issue_id": "ISS-TMK-2026-003",
+            "class_id": "POTHOLE",
+            "original_detector_class_label": null,
+            "class_display_label": "Pothole (Inner Cavity B)",
+            "detection_status": "ACCEPTED_REQUIRES_REVIEW",
+            "raw_confidence": null,
+            "normalized_confidence": null,
+            "confidence_percent": null,
+            "confidence_band": "UNAVAILABLE",
+            "calibration_status": "NOT_APPLICABLE",
+            "localization_status": "NOT_PROVIDED_BY_DETECTOR",
+            "localization_source": "NOT_PROVIDED_BY_DETECTOR",
+            "bounding_box_normalized": null,
+            "visible_description": "Second adjacent circular cavity to the right of curb defect.",
+            "supporting_evidence": [
+              "Distinct asphalt rim separation"
+            ],
+            "counter_evidence": [],
+            "severity_assessment": {
+              "status": "ASSESSED",
+              "score": 41,
+              "label": "MODERATE",
+              "rubric_id": "POTHOLE_RUBRIC_V1",
+              "rubric_version": "1.0-provisional",
+              "dimension_scores": {
+                "apparent_extent": 40,
+                "surface_breakdown": 45
+              },
+              "dimension_weights": {
+                "apparent_extent": 20,
+                "surface_breakdown": 20
+              },
+              "available_dimension_coverage": 0.7,
+              "evidence_summary": "Secondary cavity in same carriageway section.",
+              "missing_evidence": [
+                "Depth measurement"
+              ],
+              "assessment_uncertainty": "Moderate uncertainty.",
+              "human_review_recommended": true
+            },
+            "public_impact_assessment": {
+              "status": "ASSESSED",
+              "score": 55,
+              "dimension_scores": {
+                "road_user_exposure": 55
+              },
+              "dimension_weights": {
+                "road_user_exposure": 25
+              },
+              "available_dimension_coverage": 0.65,
+              "evidence_summary": "Adjacent to passenger boarding area.",
+              "verified_context_used": [],
+              "unknown_context": [
+                "Official traffic count"
+              ],
+              "assessment_uncertainty": "Moderate."
+            },
+            "uncertainty_flags": [
+              "MULTI_OBJECT_SINGLE_GPS"
+            ],
+            "verification_status": "REVIEW_RECOMMENDED"
+          }
+        ],
+        "other_civic_candidates": [],
+        "verification_recommendation": {
+          "recommendation": "REVIEW_RECOMMENDED",
+          "reason_codes": [
+            "REPORT_OBSERVATION_GPS_APPROXIMATE",
+            "MULTI_OBJECT_SEPARATION"
+          ],
+          "reason_summary": "Multiple cavities detected under single observation GPS; verify whether to treat as one repair patch.",
+          "additional_evidence_requested": []
+        },
+        "uncertainty_and_warnings": [
+          "Geographical importance missing; priority score is PROVISIONAL (85% coverage)."
+        ],
+        "model_metadata": {
+          "vision_model_name": "gemini-4-hydrogen",
+          "vision_model_version": "v1",
+          "detector_name": null,
+          "detector_version": null,
+          "calibration_status": "NOT_APPLICABLE_VISION_ONLY",
+          "prompt_version": "urbanpulse-master-v1.0",
+          "severity_rubric_version": "1.0-provisional",
+          "priority_formula_version": "up-priority-v1.0"
+        }
+      },
+      "timeline": [
+        {
+          "event_id": "tl-3a",
+          "step": "Submitted",
+          "status": "SUBMITTED",
+          "actor_label": "Ananya Rao",
+          "occurred_at": "2026-11-22T06:00:00.000Z",
+          "detail": "Submitted with 32m observation GPS."
+        },
+        {
+          "event_id": "tl-3b",
+          "step": "Analysis Complete",
+          "status": "COMPLETED",
+          "actor_label": "UrbanPulse AI",
+          "occurred_at": "2026-11-22T06:00:00.000Z",
+          "detail": "2 pothole instances identified; awaiting verification."
+        }
+      ],
+      "is_demo_seed": true
+    },
+    {
+      "report_id": "REP-TMK-1004",
+      "report_reference": "UP-TMK-1004",
+      "submitted_by_user_id": "usr-citizen-demo",
+      "submitted_by_label": "Ananya Rao",
+      "user_selected_category": "GARBAGE_OR_WASTE",
+      "description": "Plastic waste bags dumped along Ashok Nagar 3rd cross curb.",
+      "additional_info": "",
+      "location_label": "Ashok Nagar 3rd Cross, Tumakuru",
+      "submitted_at": "2026-11-23T07:00:00.000Z",
+      "updated_at": "2026-11-24T00:00:00.000Z",
+      "ai_processing_status": "COMPLETED",
+      "human_verification_status": "VERIFIED",
+      "operational_status": "VERIFIED",
+      "physical_issue_id": "ISS-TMK-2026-004",
+      "evidence_assets": [
+        {
+          "evidence_id": "ev-1004",
+          "report_id": "REP-TMK-1004",
+          "url": "/src/assets/images/garbage_market_pile_1795571244633.jpg",
+          "mime_type": "image/jpeg",
+          "file_name_safe": "ashok_nagar_waste.jpg",
+          "width": 1200,
+          "height": 900,
+          "captured_at": "2026-11-23T07:00:00.000Z",
+          "uploaded_at": "2026-11-23T07:00:00.000Z",
+          "kind": "CITIZEN_REPORT"
+        }
+      ],
+      "location_observation": {
+        "location_observation_id": "loc-4",
+        "report_id": "REP-TMK-1004",
+        "physical_issue_id": "ISS-TMK-2026-004",
+        "latitude": 13.3476,
+        "longitude": 77.1062,
+        "horizontal_accuracy_meters": 16,
+        "coordinate_reference_system": "EPSG:4326",
+        "location_source": "USER_PLACED_PIN",
+        "location_meaning": "ISSUE_LOCATION",
+        "human_readable_label": "Ashok Nagar 3rd Cross, Tumakuru",
+        "captured_at": "2026-11-23T07:00:00.000Z",
+        "recorded_at": "2026-11-23T07:00:00.000Z",
+        "confirmed_by_user": true,
+        "verified_by_authorized_reviewer": true,
+        "validation_status": "VALID_EXACT_OR_HIGH_PRECISION",
+        "precision_band": "GOOD",
+        "jurisdiction_status": "INSIDE_OPERATING_EXTENT_UNVERIFIED_BOUNDARY",
+        "supersedes_location_observation_id": null
+      },
+      "ai_analysis": {
+        "analysis_id": "ai-1004",
+        "report_id": "REP-TMK-1004",
+        "schema_version": "1.0",
+        "analysis_status": "SUCCESS",
+        "analysis_mode": "VISION_ONLY",
+        "started_at": "2026-11-23T07:00:00.000Z",
+        "completed_at": "2026-11-23T07:00:00.000Z",
+        "image_assessment": {
+          "relevance_status": "CIVIC_RELEVANT_SUPPORTED",
+          "relevance_reason": "Visible bagged refuse accumulation along street curb.",
+          "image_quality_status": "GOOD",
+          "quality_issues": [],
+          "screenshot_or_rephotographed_evidence": false,
+          "image_integrity_status": "NO_CONCERN_IDENTIFIED",
+          "user_category_match_status": "MATCH",
+          "user_description_match_status": "CONSISTENT",
+          "manual_review_required": false
+        },
+        "detected_classes": [
+          "GARBAGE_OR_WASTE"
+        ],
+        "detections": [
+          {
+            "detection_id": "det_004",
+            "source_image_id": "ev-1004",
+            "physical_issue_id": "ISS-TMK-2026-004",
+            "class_id": "GARBAGE_OR_WASTE",
+            "original_detector_class_label": null,
+            "class_display_label": "Garbage / Waste",
+            "detection_status": "ACCEPTED_DETECTION",
+            "raw_confidence": null,
+            "normalized_confidence": null,
+            "confidence_percent": null,
+            "confidence_band": "UNAVAILABLE",
+            "calibration_status": "NOT_APPLICABLE",
+            "localization_status": "NOT_PROVIDED_BY_DETECTOR",
+            "localization_source": "NOT_PROVIDED_BY_DETECTOR",
+            "bounding_box_normalized": null,
+            "visible_description": "Localized refuse bags and scattered wrappers against concrete curb.",
+            "supporting_evidence": [
+              "Tied black and blue waste bags"
+            ],
+            "counter_evidence": [],
+            "severity_assessment": {
+              "status": "ASSESSED",
+              "score": 21,
+              "label": "LOW",
+              "rubric_id": "GARBAGE_RUBRIC_V1",
+              "rubric_version": "1.0-provisional",
+              "dimension_scores": {
+                "accumulation_extent": 24,
+                "waste_concentration": 20,
+                "drainage_obstruction": 0
+              },
+              "dimension_weights": {
+                "accumulation_extent": 20,
+                "waste_concentration": 15,
+                "drainage_obstruction": 15
+              },
+              "available_dimension_coverage": 0.85,
+              "evidence_summary": "Contained curbside waste without visible drain obstruction.",
+              "missing_evidence": [],
+              "assessment_uncertainty": "Low uncertainty.",
+              "human_review_recommended": false
+            },
+            "public_impact_assessment": {
+              "status": "ASSESSED",
+              "score": 28,
+              "dimension_scores": {
+                "obstruction_access": 28
+              },
+              "dimension_weights": {
+                "obstruction_access": 25
+              },
+              "available_dimension_coverage": 0.8,
+              "evidence_summary": "Minor sidewalk shoulder encroachment.",
+              "verified_context_used": [],
+              "unknown_context": [],
+              "assessment_uncertainty": "Low."
+            },
+            "uncertainty_flags": [
+              "DETECTOR_UNAVAILABLE_VISION_ONLY"
+            ],
+            "verification_status": "VERIFIED"
+          }
+        ],
+        "other_civic_candidates": [],
+        "verification_recommendation": {
+          "recommendation": "NOT_REQUIRED_UNDER_CONFIGURED_POLICY",
+          "reason_codes": [],
+          "reason_summary": "Verified for routine municipal collection.",
+          "additional_evidence_requested": []
+        },
+        "uncertainty_and_warnings": [],
+        "model_metadata": {
+          "vision_model_name": "gemini-4-hydrogen",
+          "vision_model_version": "v1",
+          "detector_name": null,
+          "detector_version": null,
+          "calibration_status": "NOT_APPLICABLE_VISION_ONLY",
+          "prompt_version": "urbanpulse-master-v1.0",
+          "severity_rubric_version": "1.0-provisional",
+          "priority_formula_version": "up-priority-v1.0"
+        }
+      },
+      "timeline": [
+        {
+          "event_id": "tl-4a",
+          "step": "Submitted",
+          "status": "SUBMITTED",
+          "actor_label": "Ananya Rao",
+          "occurred_at": "2026-11-23T07:00:00.000Z",
+          "detail": "Submitted with manual map pin."
+        },
+        {
+          "event_id": "tl-4b",
+          "step": "Verified",
+          "status": "VERIFIED",
+          "actor_label": "Municipal Reviewer",
+          "occurred_at": "2026-11-24T00:00:00.000Z",
+          "detail": "Verified for routine pickup."
+        }
+      ],
+      "is_demo_seed": true
+    },
+    {
+      "report_id": "REP-TMK-1005",
+      "report_reference": "UP-TMK-1005",
+      "submitted_by_user_id": "usr-citizen-demo",
+      "submitted_by_label": "Ananya Rao",
+      "user_selected_category": "OTHER_CIVIC_CANDIDATE",
+      "description": "Leaning metal streetlight pole with hanging damaged lamp fixture at intersection.",
+      "additional_info": "Electrical safety check may be needed.",
+      "location_label": "Batawadi Junction Pedestrian Corner, Tumakuru",
+      "submitted_at": "2026-11-24T04:00:00.000Z",
+      "updated_at": "2026-11-24T04:00:00.000Z",
+      "ai_processing_status": "COMPLETED",
+      "human_verification_status": "REVIEW_REQUIRED",
+      "operational_status": "PENDING_VERIFICATION",
+      "physical_issue_id": "ISS-TMK-2026-005",
+      "evidence_assets": [
+        {
+          "evidence_id": "ev-1005",
+          "report_id": "REP-TMK-1005",
+          "url": "/src/assets/images/broken_streetlight_candidate_1795571246424.jpg",
+          "mime_type": "image/jpeg",
+          "file_name_safe": "batawadi_streetlight.jpg",
+          "width": 1200,
+          "height": 900,
+          "captured_at": "2026-11-24T04:00:00.000Z",
+          "uploaded_at": "2026-11-24T04:00:00.000Z",
+          "kind": "CITIZEN_REPORT"
+        }
+      ],
+      "location_observation": {
+        "location_observation_id": "loc-5",
+        "report_id": "REP-TMK-1005",
+        "physical_issue_id": "ISS-TMK-2026-005",
+        "latitude": 13.3264,
+        "longitude": 77.1292,
+        "horizontal_accuracy_meters": 19,
+        "coordinate_reference_system": "EPSG:4326",
+        "location_source": "USER_PLACED_PIN",
+        "location_meaning": "ISSUE_LOCATION",
+        "human_readable_label": "Batawadi Junction Pedestrian Corner, Tumakuru",
+        "captured_at": "2026-11-24T04:00:00.000Z",
+        "recorded_at": "2026-11-24T04:00:00.000Z",
+        "confirmed_by_user": true,
+        "verified_by_authorized_reviewer": false,
+        "validation_status": "VALID_EXACT_OR_HIGH_PRECISION",
+        "precision_band": "GOOD",
+        "jurisdiction_status": "INSIDE_OPERATING_EXTENT_UNVERIFIED_BOUNDARY",
+        "supersedes_location_observation_id": null
+      },
+      "ai_analysis": {
+        "analysis_id": "ai-1005",
+        "report_id": "REP-TMK-1005",
+        "schema_version": "1.0",
+        "analysis_status": "REQUIRES_REVIEW",
+        "analysis_mode": "VISION_ONLY",
+        "started_at": "2026-11-24T04:00:00.000Z",
+        "completed_at": "2026-11-24T04:00:00.000Z",
+        "image_assessment": {
+          "relevance_status": "CIVIC_OTHER_CANDIDATE",
+          "relevance_reason": "Visibly tilted streetlight pole and broken lamp housing — outside primary POTHOLE/GARBAGE_OR_WASTE detector classes.",
+          "image_quality_status": "GOOD",
+          "quality_issues": [],
+          "screenshot_or_rephotographed_evidence": false,
+          "image_integrity_status": "NO_CONCERN_IDENTIFIED",
+          "user_category_match_status": "MATCH",
+          "user_description_match_status": "CONSISTENT",
+          "manual_review_required": true
+        },
+        "detected_classes": [],
+        "detections": [],
+        "other_civic_candidates": [
+          {
+            "candidate_label": "DAMAGED_PUBLIC_STREETLIGHT",
+            "visible_description": "Leaning metal streetlight pole at ~45-degree angle with shattered luminaire glass hanging.",
+            "reason_civic_related": "Public street lighting infrastructure hazard near pedestrian crosswalk.",
+            "additional_evidence_needed": "Electrical / structural engineering inspection required; no automated severity rubric configured for streetlights."
+          }
+        ],
+        "verification_recommendation": {
+          "recommendation": "CATEGORY_SUPPORT_REQUIRED",
+          "reason_codes": [
+            "CLASS_UNSUPPORTED",
+            "CATEGORY_RUBRIC_MISSING",
+            "INSUFFICIENT_FACTOR_COVERAGE"
+          ],
+          "reason_summary": "Classified as OTHER_CIVIC_CANDIDATE. Severity remains UNKNOWN (null) pending category rubric.",
+          "additional_evidence_requested": [
+            "Manual electrical safety inspection"
+          ]
+        },
+        "uncertainty_and_warnings": [
+          "Priority score withheld (coverage 50% < 60% minimum threshold)."
+        ],
+        "model_metadata": {
+          "vision_model_name": "gemini-4-hydrogen",
+          "vision_model_version": "v1",
+          "detector_name": null,
+          "detector_version": null,
+          "calibration_status": "NOT_APPLICABLE_VISION_ONLY",
+          "prompt_version": "urbanpulse-master-v1.0",
+          "severity_rubric_version": "1.0-provisional",
+          "priority_formula_version": "up-priority-v1.0"
+        }
+      },
+      "timeline": [
+        {
+          "event_id": "tl-5a",
+          "step": "Submitted",
+          "status": "SUBMITTED",
+          "actor_label": "Ananya Rao",
+          "occurred_at": "2026-11-24T04:00:00.000Z",
+          "detail": "Report submitted."
+        },
+        {
+          "event_id": "tl-5b",
+          "step": "Analysis Complete",
+          "status": "COMPLETED",
+          "actor_label": "UrbanPulse AI",
+          "occurred_at": "2026-11-24T04:00:00.000Z",
+          "detail": "Flagged as OTHER_CIVIC_CANDIDATE; routed to human review."
+        }
+      ],
+      "is_demo_seed": true
+    },
+    {
+      "report_id": "REP-TMK-1006",
+      "report_reference": "UP-TMK-1006",
+      "submitted_by_user_id": "usr-citizen-demo",
+      "submitted_by_label": "Ananya Rao",
+      "user_selected_category": "POTHOLE",
+      "description": "Road cavity near Siddaganga Extension main junction repaired after field verification.",
+      "additional_info": "",
+      "location_label": "Siddaganga Extension Main Road, Tumakuru",
+      "submitted_at": "2026-11-12T12:00:00.000Z",
+      "updated_at": "2026-11-23T09:00:00.000Z",
+      "ai_processing_status": "COMPLETED",
+      "human_verification_status": "VERIFIED",
+      "operational_status": "RESOLVED",
+      "physical_issue_id": "ISS-TMK-2026-006",
+      "evidence_assets": [
+        {
+          "evidence_id": "ev-1006",
+          "report_id": "REP-TMK-1006",
+          "url": "/src/assets/images/pothole_bh_road_1795571244359.jpg",
+          "mime_type": "image/jpeg",
+          "file_name_safe": "siddaganga_resolved.jpg",
+          "width": 1200,
+          "height": 900,
+          "captured_at": "2026-11-12T12:00:00.000Z",
+          "uploaded_at": "2026-11-12T12:00:00.000Z",
+          "kind": "CITIZEN_REPORT"
+        }
+      ],
+      "location_observation": {
+        "location_observation_id": "loc-6",
+        "report_id": "REP-TMK-1006",
+        "physical_issue_id": "ISS-TMK-2026-006",
+        "latitude": 13.3212,
+        "longitude": 77.1172,
+        "horizontal_accuracy_meters": 9,
+        "coordinate_reference_system": "EPSG:4326",
+        "location_source": "VERIFIED_REVIEWER_CORRECTION",
+        "location_meaning": "ISSUE_LOCATION",
+        "human_readable_label": "Siddaganga Extension Main Road, Tumakuru",
+        "captured_at": "2026-11-12T12:00:00.000Z",
+        "recorded_at": "2026-11-12T12:00:00.000Z",
+        "confirmed_by_user": true,
+        "verified_by_authorized_reviewer": true,
+        "validation_status": "VALID_EXACT_OR_HIGH_PRECISION",
+        "precision_band": "HIGH",
+        "jurisdiction_status": "INSIDE_OPERATING_EXTENT_UNVERIFIED_BOUNDARY",
+        "supersedes_location_observation_id": null
+      },
+      "ai_analysis": null,
+      "timeline": [
+        {
+          "event_id": "tl-6a",
+          "step": "Submitted",
+          "status": "SUBMITTED",
+          "actor_label": "Ananya Rao",
+          "occurred_at": "2026-11-12T12:00:00.000Z",
+          "detail": "Report submitted."
+        },
+        {
+          "event_id": "tl-6b",
+          "step": "Resolved",
+          "status": "RESOLVED",
+          "actor_label": "Admin Command",
+          "occurred_at": "2026-11-23T09:00:00.000Z",
+          "detail": "Road patch verified and issue marked resolved."
+        }
+      ],
+      "is_demo_seed": true
+    },
+    {
+      "report_id": "REP-TMK-1007",
+      "report_reference": "UP-TMK-1007",
+      "submitted_by_user_id": "usr-citizen-demo",
+      "submitted_by_label": "Ananya Rao",
+      "user_selected_category": "GARBAGE_OR_WASTE",
+      "description": "Garbage pile near market bus stand (submitted from desktop without GPS permission).",
+      "additional_info": "Near Kyathsandra Bus Stand.",
+      "location_label": "Kyathsandra (Unlocated GPS)",
+      "submitted_at": "2026-11-24T09:00:00.000Z",
+      "updated_at": "2026-11-24T09:00:00.000Z",
+      "ai_processing_status": "COMPLETED",
+      "human_verification_status": "REVIEW_REQUIRED",
+      "operational_status": "PENDING_VERIFICATION",
+      "physical_issue_id": "ISS-TMK-2026-007",
+      "evidence_assets": [
+        {
+          "evidence_id": "ev-1007",
+          "report_id": "REP-TMK-1007",
+          "url": "/src/assets/images/garbage_market_pile_1795571244633.jpg",
+          "mime_type": "image/jpeg",
+          "file_name_safe": "kyathsandra_unlocated.jpg",
+          "width": 1200,
+          "height": 900,
+          "captured_at": "2026-11-24T09:00:00.000Z",
+          "uploaded_at": "2026-11-24T09:00:00.000Z",
+          "kind": "CITIZEN_REPORT"
+        }
+      ],
+      "location_observation": {
+        "location_observation_id": "loc-7",
+        "report_id": "REP-TMK-1007",
+        "physical_issue_id": "ISS-TMK-2026-007",
+        "latitude": null,
+        "longitude": null,
+        "horizontal_accuracy_meters": null,
+        "coordinate_reference_system": "EPSG:4326",
+        "location_source": "UNKNOWN",
+        "location_meaning": "UNKNOWN",
+        "human_readable_label": "Kyathsandra (GPS Unavailable)",
+        "captured_at": "2026-11-24T09:00:00.000Z",
+        "recorded_at": "2026-11-24T09:00:00.000Z",
+        "confirmed_by_user": false,
+        "verified_by_authorized_reviewer": false,
+        "validation_status": "GPS_UNAVAILABLE",
+        "precision_band": "UNKNOWN",
+        "jurisdiction_status": "UNKNOWN",
+        "supersedes_location_observation_id": null
+      },
+      "ai_analysis": null,
+      "timeline": [
+        {
+          "event_id": "tl-7a",
+          "step": "Submitted",
+          "status": "SUBMITTED",
+          "actor_label": "Ananya Rao",
+          "occurred_at": "2026-11-24T09:00:00.000Z",
+          "detail": "Submitted without GPS; retained as unlocated report."
+        }
+      ],
+      "is_demo_seed": true
+    }
+  ],
+  "issues": [
+    {
+      "physical_issue_id": "ISS-TMK-2026-001",
+      "canonical_category": "POTHOLE",
+      "canonical_summary": "Deep water-filled asphalt cavity in active wheel path on B.H. Road",
+      "current_issue_status": "IN_PROGRESS",
+      "human_verification_status": "VERIFIED",
+      "severity_score": 86,
+      "severity_label": "CRITICAL",
+      "public_impact_score": 82,
+      "geographical_importance_score": 85,
+      "geographical_importance_status": "VERIFIED_CONTEXT",
+      "corroboration_score": 60,
+      "confirmed_independent_report_count": 4,
+      "related_submission_count": 4,
+      "age_score": 30.6,
+      "days_unresolved": 6.2,
+      "priority_assessment": {
+        "status": "COMPLETE",
+        "score": 75.4,
+        "label": "CRITICAL",
+        "is_provisional": false,
+        "formula_id": "URBANPULSE_PRIORITY_5FACTOR",
+        "formula_version": "up-priority-v1.0",
+        "factor_scores": {
+          "severity": 86,
+          "public_impact": 82,
+          "geographical_importance": 85,
+          "independent_corroboration": 60,
+          "time_unresolved": 30.6
+        },
+        "factor_weights": {
+          "severity": 35,
+          "public_impact": 25,
+          "geographical_importance": 15,
+          "independent_corroboration": 15,
+          "time_unresolved": 10
+        },
+        "available_weight_coverage": 1,
+        "missing_factors": [],
+        "calculation_expression": "(86.0 × 0.35) + (82.0 × 0.25) + (85.0 × 0.15) + (60.0 × 0.15) + (30.6 × 0.10) = 75.4",
+        "calculation_explanation": "Complete weighted priority score across all 5 configured factors.",
+        "safety_review_flag": true,
+        "ranking_eligibility": "ELIGIBLE",
+        "comparability_warnings": []
+      },
+      "authoritative_location": {
+        "location_observation_id": "loc-1",
+        "report_id": "REP-TMK-1001",
+        "physical_issue_id": "ISS-TMK-2026-001",
+        "latitude": 13.3409,
+        "longitude": 77.1014,
+        "horizontal_accuracy_meters": 7,
+        "coordinate_reference_system": "EPSG:4326",
+        "location_source": "VERIFIED_REVIEWER_CORRECTION",
+        "location_meaning": "ISSUE_LOCATION",
+        "human_readable_label": "B.H. Road near Town Hall Circle, Tumakuru",
+        "captured_at": "2026-11-18T08:00:00.000Z",
+        "recorded_at": "2026-11-18T08:00:00.000Z",
+        "confirmed_by_user": true,
+        "verified_by_authorized_reviewer": true,
+        "validation_status": "VALID_EXACT_OR_HIGH_PRECISION",
+        "precision_band": "HIGH",
+        "jurisdiction_status": "INSIDE_OPERATING_EXTENT_UNVERIFIED_BOUNDARY",
+        "supersedes_location_observation_id": null
+      },
+      "location_history": [],
+      "human_override": null,
+      "assigned_officer_id": "off-1",
+      "assigned_officer_name": "Karthik Gowda",
+      "assigned_at": "2026-11-19T12:00:00.000Z",
+      "due_at": "2026-11-25T12:00:00.000Z",
+      "field_notes": [
+        {
+          "note_id": "fn-1",
+          "officer_id": "off-1",
+          "officer_name": "Karthik Gowda",
+          "created_at": "2026-11-23T12:00:00.000Z",
+          "note": "Site barricaded. Cold-mix aggregate dispatch scheduled for morning slot.",
+          "stage": "IN_PROGRESS"
+        }
+      ],
+      "field_evidence": [],
+      "first_reported_at": "2026-11-18T08:00:00.000Z",
+      "last_updated_at": "2026-11-23T12:00:00.000Z",
+      "resolved_at": null,
+      "reopened_at": null,
+      "associated_report_ids": [
+        "REP-TMK-1001"
+      ],
+      "safety_review_flag": true,
+      "is_demo_seed": true
+    },
+    {
+      "physical_issue_id": "ISS-TMK-2026-002",
+      "canonical_category": "GARBAGE_OR_WASTE",
+      "canonical_summary": "Uncollected mixed plastic waste pile adjacent to storm drain grate",
+      "current_issue_status": "ASSIGNED",
+      "human_verification_status": "VERIFIED",
+      "severity_score": 71,
+      "severity_label": "HIGH",
+      "public_impact_score": 76,
+      "geographical_importance_score": 72,
+      "geographical_importance_status": "VERIFIED_CONTEXT",
+      "corroboration_score": 40,
+      "confirmed_independent_report_count": 3,
+      "related_submission_count": 3,
+      "age_score": 18,
+      "days_unresolved": 3.1,
+      "priority_assessment": {
+        "status": "COMPLETE",
+        "score": 62.5,
+        "label": "HIGH",
+        "is_provisional": false,
+        "formula_id": "URBANPULSE_PRIORITY_5FACTOR",
+        "formula_version": "up-priority-v1.0",
+        "factor_scores": {
+          "severity": 71,
+          "public_impact": 76,
+          "geographical_importance": 72,
+          "independent_corroboration": 40,
+          "time_unresolved": 18
+        },
+        "factor_weights": {
+          "severity": 35,
+          "public_impact": 25,
+          "geographical_importance": 15,
+          "independent_corroboration": 15,
+          "time_unresolved": 10
+        },
+        "available_weight_coverage": 1,
+        "missing_factors": [],
+        "calculation_expression": "(71.0 × 0.35) + (76.0 × 0.25) + (72.0 × 0.15) + (40.0 × 0.15) + (18.0 × 0.10) = 62.5",
+        "calculation_explanation": "Complete weighted priority score across all 5 configured factors.",
+        "safety_review_flag": false,
+        "ranking_eligibility": "ELIGIBLE",
+        "comparability_warnings": []
+      },
+      "authoritative_location": {
+        "location_observation_id": "loc-2",
+        "report_id": "REP-TMK-1002",
+        "physical_issue_id": "ISS-TMK-2026-002",
+        "latitude": 13.3442,
+        "longitude": 77.1135,
+        "horizontal_accuracy_meters": 11,
+        "coordinate_reference_system": "EPSG:4326",
+        "location_source": "USER_CONFIRMED_DEVICE_GPS",
+        "location_meaning": "ISSUE_LOCATION",
+        "human_readable_label": "Mandi Pete Market Lane, Tumakuru",
+        "captured_at": "2026-11-21T10:00:00.000Z",
+        "recorded_at": "2026-11-21T10:00:00.000Z",
+        "confirmed_by_user": true,
+        "verified_by_authorized_reviewer": true,
+        "validation_status": "VALID_EXACT_OR_HIGH_PRECISION",
+        "precision_band": "GOOD",
+        "jurisdiction_status": "INSIDE_OPERATING_EXTENT_UNVERIFIED_BOUNDARY",
+        "supersedes_location_observation_id": null
+      },
+      "location_history": [],
+      "human_override": null,
+      "assigned_officer_id": "off-1",
+      "assigned_officer_name": "Karthik Gowda",
+      "assigned_at": "2026-11-22T12:00:00.000Z",
+      "due_at": "2026-11-26T12:00:00.000Z",
+      "field_notes": [],
+      "field_evidence": [],
+      "first_reported_at": "2026-11-21T10:00:00.000Z",
+      "last_updated_at": "2026-11-22T12:00:00.000Z",
+      "resolved_at": null,
+      "reopened_at": null,
+      "associated_report_ids": [
+        "REP-TMK-1002"
+      ],
+      "safety_review_flag": false,
+      "is_demo_seed": true
+    },
+    {
+      "physical_issue_id": "ISS-TMK-2026-003",
+      "canonical_category": "POTHOLE",
+      "canonical_summary": "Twin surface cavities along curb approach near S.S. Puram bus shelter",
+      "current_issue_status": "PENDING_VERIFICATION",
+      "human_verification_status": "REVIEW_RECOMMENDED",
+      "severity_score": 44,
+      "severity_label": "MODERATE",
+      "public_impact_score": 58,
+      "geographical_importance_score": null,
+      "geographical_importance_status": "UNAVAILABLE",
+      "corroboration_score": 20,
+      "confirmed_independent_report_count": 2,
+      "related_submission_count": 2,
+      "age_score": 13.8,
+      "days_unresolved": 2.3,
+      "priority_assessment": {
+        "status": "PROVISIONAL",
+        "score": 40.3,
+        "label": "MODERATE",
+        "is_provisional": true,
+        "formula_id": "URBANPULSE_PRIORITY_5FACTOR",
+        "formula_version": "up-priority-v1.0",
+        "factor_scores": {
+          "severity": 44,
+          "public_impact": 58,
+          "geographical_importance": null,
+          "independent_corroboration": 20,
+          "time_unresolved": 13.8
+        },
+        "factor_weights": {
+          "severity": 35,
+          "public_impact": 25,
+          "geographical_importance": 15,
+          "independent_corroboration": 15,
+          "time_unresolved": 10
+        },
+        "available_weight_coverage": 0.85,
+        "missing_factors": [
+          "geographical_importance"
+        ],
+        "calculation_expression": "[(44.0 × 0.35) + (58.0 × 0.25) + (20.0 × 0.15) + (13.8 × 0.10)] / 0.85 = 40.3",
+        "calculation_explanation": "Provisional normalized score computed across 85% available factor weight (missing: geographical_importance).",
+        "safety_review_flag": false,
+        "ranking_eligibility": "PROVISIONAL_ELIGIBLE",
+        "comparability_warnings": [
+          "PROVISIONAL_SCORE_MISSING_FACTORS"
+        ]
+      },
+      "authoritative_location": {
+        "location_observation_id": "loc-3",
+        "report_id": "REP-TMK-1003",
+        "physical_issue_id": "ISS-TMK-2026-003",
+        "latitude": 13.3328,
+        "longitude": 77.1182,
+        "horizontal_accuracy_meters": 32,
+        "coordinate_reference_system": "EPSG:4326",
+        "location_source": "DEVICE_GPS",
+        "location_meaning": "REPORT_OBSERVATION_LOCATION",
+        "human_readable_label": "S.S. Puram Main Road Bus Stop, Tumakuru",
+        "captured_at": "2026-11-22T06:00:00.000Z",
+        "recorded_at": "2026-11-22T06:00:00.000Z",
+        "confirmed_by_user": true,
+        "verified_by_authorized_reviewer": false,
+        "validation_status": "VALID_APPROXIMATE",
+        "precision_band": "FAIR",
+        "jurisdiction_status": "INSIDE_OPERATING_EXTENT_UNVERIFIED_BOUNDARY",
+        "supersedes_location_observation_id": null
+      },
+      "location_history": [],
+      "human_override": null,
+      "assigned_officer_id": null,
+      "assigned_officer_name": null,
+      "assigned_at": null,
+      "due_at": null,
+      "field_notes": [],
+      "field_evidence": [],
+      "first_reported_at": "2026-11-22T06:00:00.000Z",
+      "last_updated_at": "2026-11-22T06:00:00.000Z",
+      "resolved_at": null,
+      "reopened_at": null,
+      "associated_report_ids": [
+        "REP-TMK-1003"
+      ],
+      "safety_review_flag": false,
+      "is_demo_seed": true
+    },
+    {
+      "physical_issue_id": "ISS-TMK-2026-004",
+      "canonical_category": "GARBAGE_OR_WASTE",
+      "canonical_summary": "Roadside bagged refuse accumulation along Ashok Nagar residential curb",
+      "current_issue_status": "VERIFIED",
+      "human_verification_status": "VERIFIED",
+      "severity_score": 21,
+      "severity_label": "LOW",
+      "public_impact_score": 28,
+      "geographical_importance_score": null,
+      "geographical_importance_status": "UNAVAILABLE",
+      "corroboration_score": 0,
+      "confirmed_independent_report_count": 1,
+      "related_submission_count": 1,
+      "age_score": 7.9,
+      "days_unresolved": 1.2,
+      "priority_assessment": {
+        "status": "PROVISIONAL",
+        "score": 17.8,
+        "label": "LOW",
+        "is_provisional": true,
+        "formula_id": "URBANPULSE_PRIORITY_5FACTOR",
+        "formula_version": "up-priority-v1.0",
+        "factor_scores": {
+          "severity": 21,
+          "public_impact": 28,
+          "geographical_importance": null,
+          "independent_corroboration": 0,
+          "time_unresolved": 7.9
+        },
+        "factor_weights": {
+          "severity": 35,
+          "public_impact": 25,
+          "geographical_importance": 15,
+          "independent_corroboration": 15,
+          "time_unresolved": 10
+        },
+        "available_weight_coverage": 0.85,
+        "missing_factors": [
+          "geographical_importance"
+        ],
+        "calculation_expression": "[(21.0 × 0.35) + (28.0 × 0.25) + (0.0 × 0.15) + (7.9 × 0.10)] / 0.85 = 17.8",
+        "calculation_explanation": "Provisional normalized score computed across 85% available factor weight (missing: geographical_importance).",
+        "safety_review_flag": false,
+        "ranking_eligibility": "PROVISIONAL_ELIGIBLE",
+        "comparability_warnings": [
+          "PROVISIONAL_SCORE_MISSING_FACTORS"
+        ]
+      },
+      "authoritative_location": {
+        "location_observation_id": "loc-4",
+        "report_id": "REP-TMK-1004",
+        "physical_issue_id": "ISS-TMK-2026-004",
+        "latitude": 13.3476,
+        "longitude": 77.1062,
+        "horizontal_accuracy_meters": 16,
+        "coordinate_reference_system": "EPSG:4326",
+        "location_source": "USER_PLACED_PIN",
+        "location_meaning": "ISSUE_LOCATION",
+        "human_readable_label": "Ashok Nagar 3rd Cross, Tumakuru",
+        "captured_at": "2026-11-23T07:00:00.000Z",
+        "recorded_at": "2026-11-23T07:00:00.000Z",
+        "confirmed_by_user": true,
+        "verified_by_authorized_reviewer": true,
+        "validation_status": "VALID_EXACT_OR_HIGH_PRECISION",
+        "precision_band": "GOOD",
+        "jurisdiction_status": "INSIDE_OPERATING_EXTENT_UNVERIFIED_BOUNDARY",
+        "supersedes_location_observation_id": null
+      },
+      "location_history": [],
+      "human_override": null,
+      "assigned_officer_id": null,
+      "assigned_officer_name": null,
+      "assigned_at": null,
+      "due_at": null,
+      "field_notes": [],
+      "field_evidence": [],
+      "first_reported_at": "2026-11-23T07:00:00.000Z",
+      "last_updated_at": "2026-11-24T00:00:00.000Z",
+      "resolved_at": null,
+      "reopened_at": null,
+      "associated_report_ids": [
+        "REP-TMK-1004"
+      ],
+      "safety_review_flag": false,
+      "is_demo_seed": true
+    },
+    {
+      "physical_issue_id": "ISS-TMK-2026-005",
+      "canonical_category": "OTHER_CIVIC_CANDIDATE",
+      "canonical_summary": "Tilted streetlight pole with exposed lamp housing (pending category rubric)",
+      "current_issue_status": "PENDING_VERIFICATION",
+      "human_verification_status": "REVIEW_REQUIRED",
+      "severity_score": null,
+      "severity_label": "UNKNOWN",
+      "public_impact_score": 52,
+      "geographical_importance_score": null,
+      "geographical_importance_status": "UNAVAILABLE",
+      "corroboration_score": 0,
+      "confirmed_independent_report_count": 1,
+      "related_submission_count": 1,
+      "age_score": 2.3,
+      "days_unresolved": 0.3,
+      "priority_assessment": {
+        "status": "INSUFFICIENT_FACTOR_COVERAGE",
+        "score": null,
+        "label": "UNDETERMINED",
+        "is_provisional": false,
+        "formula_id": "URBANPULSE_PRIORITY_5FACTOR",
+        "formula_version": "up-priority-v1.0",
+        "factor_scores": {
+          "severity": null,
+          "public_impact": 52,
+          "geographical_importance": null,
+          "independent_corroboration": 0,
+          "time_unresolved": 2.3
+        },
+        "factor_weights": {
+          "severity": 35,
+          "public_impact": 25,
+          "geographical_importance": 15,
+          "independent_corroboration": 15,
+          "time_unresolved": 10
+        },
+        "available_weight_coverage": 0.5,
+        "missing_factors": [
+          "severity",
+          "geographical_importance"
+        ],
+        "calculation_expression": "Coverage 50% < 60% minimum threshold",
+        "calculation_explanation": "Available factor weight coverage is below the 60% minimum threshold. Missing values are never replaced with zero.",
+        "safety_review_flag": true,
+        "ranking_eligibility": "NOT_ELIGIBLE",
+        "comparability_warnings": [
+          "INSUFFICIENT_FACTOR_COVERAGE"
+        ]
+      },
+      "authoritative_location": {
+        "location_observation_id": "loc-5",
+        "report_id": "REP-TMK-1005",
+        "physical_issue_id": "ISS-TMK-2026-005",
+        "latitude": 13.3264,
+        "longitude": 77.1292,
+        "horizontal_accuracy_meters": 19,
+        "coordinate_reference_system": "EPSG:4326",
+        "location_source": "USER_PLACED_PIN",
+        "location_meaning": "ISSUE_LOCATION",
+        "human_readable_label": "Batawadi Junction Pedestrian Corner, Tumakuru",
+        "captured_at": "2026-11-24T04:00:00.000Z",
+        "recorded_at": "2026-11-24T04:00:00.000Z",
+        "confirmed_by_user": true,
+        "verified_by_authorized_reviewer": false,
+        "validation_status": "VALID_EXACT_OR_HIGH_PRECISION",
+        "precision_band": "GOOD",
+        "jurisdiction_status": "INSIDE_OPERATING_EXTENT_UNVERIFIED_BOUNDARY",
+        "supersedes_location_observation_id": null
+      },
+      "location_history": [],
+      "human_override": null,
+      "assigned_officer_id": null,
+      "assigned_officer_name": null,
+      "assigned_at": null,
+      "due_at": null,
+      "field_notes": [],
+      "field_evidence": [],
+      "first_reported_at": "2026-11-24T04:00:00.000Z",
+      "last_updated_at": "2026-11-24T04:00:00.000Z",
+      "resolved_at": null,
+      "reopened_at": null,
+      "associated_report_ids": [
+        "REP-TMK-1005"
+      ],
+      "safety_review_flag": true,
+      "is_demo_seed": true
+    },
+    {
+      "physical_issue_id": "ISS-TMK-2026-006",
+      "canonical_category": "POTHOLE",
+      "canonical_summary": "Resurfaced asphalt depression near Siddaganga Mutt approach road",
+      "current_issue_status": "RESOLVED",
+      "human_verification_status": "VERIFIED",
+      "severity_score": 62,
+      "severity_label": "HIGH",
+      "public_impact_score": 64,
+      "geographical_importance_score": 55,
+      "geographical_importance_status": "VERIFIED_CONTEXT",
+      "corroboration_score": 20,
+      "confirmed_independent_report_count": 2,
+      "related_submission_count": 2,
+      "age_score": null,
+      "days_unresolved": 11,
+      "priority_assessment": {
+        "status": "PROVISIONAL",
+        "score": 54.4,
+        "label": "HIGH",
+        "is_provisional": true,
+        "formula_id": "URBANPULSE_PRIORITY_5FACTOR",
+        "formula_version": "up-priority-v1.0",
+        "factor_scores": {
+          "severity": 62,
+          "public_impact": 64,
+          "geographical_importance": 55,
+          "independent_corroboration": 20,
+          "time_unresolved": null
+        },
+        "factor_weights": {
+          "severity": 35,
+          "public_impact": 25,
+          "geographical_importance": 15,
+          "independent_corroboration": 15,
+          "time_unresolved": 10
+        },
+        "available_weight_coverage": 0.9,
+        "missing_factors": [
+          "time_unresolved"
+        ],
+        "calculation_expression": "[(62.0 × 0.35) + (64.0 × 0.25) + (55.0 × 0.15) + (20.0 × 0.15)] / 0.90 = 54.4",
+        "calculation_explanation": "Provisional normalized score computed across 90% available factor weight (missing: time_unresolved).",
+        "safety_review_flag": false,
+        "ranking_eligibility": "PROVISIONAL_ELIGIBLE",
+        "comparability_warnings": [
+          "PROVISIONAL_SCORE_MISSING_FACTORS"
+        ]
+      },
+      "authoritative_location": {
+        "location_observation_id": "loc-6",
+        "report_id": "REP-TMK-1006",
+        "physical_issue_id": "ISS-TMK-2026-006",
+        "latitude": 13.3212,
+        "longitude": 77.1172,
+        "horizontal_accuracy_meters": 9,
+        "coordinate_reference_system": "EPSG:4326",
+        "location_source": "VERIFIED_REVIEWER_CORRECTION",
+        "location_meaning": "ISSUE_LOCATION",
+        "human_readable_label": "Siddaganga Extension Main Road, Tumakuru",
+        "captured_at": "2026-11-12T12:00:00.000Z",
+        "recorded_at": "2026-11-12T12:00:00.000Z",
+        "confirmed_by_user": true,
+        "verified_by_authorized_reviewer": true,
+        "validation_status": "VALID_EXACT_OR_HIGH_PRECISION",
+        "precision_band": "HIGH",
+        "jurisdiction_status": "INSIDE_OPERATING_EXTENT_UNVERIFIED_BOUNDARY",
+        "supersedes_location_observation_id": null
+      },
+      "location_history": [],
+      "human_override": null,
+      "assigned_officer_id": "off-2",
+      "assigned_officer_name": "Meghana Hegde",
+      "assigned_at": "2026-11-14T12:00:00.000Z",
+      "due_at": "2026-11-22T12:00:00.000Z",
+      "field_notes": [
+        {
+          "note_id": "fn-6",
+          "officer_id": "off-2",
+          "officer_name": "Meghana Hegde",
+          "created_at": "2026-11-23T09:00:00.000Z",
+          "note": "Hot-mix asphalt patching compacted and level verified.",
+          "stage": "RESOLVED"
+        }
+      ],
+      "field_evidence": [],
+      "first_reported_at": "2026-11-12T12:00:00.000Z",
+      "last_updated_at": "2026-11-23T09:00:00.000Z",
+      "resolved_at": "2026-11-23T09:00:00.000Z",
+      "reopened_at": null,
+      "associated_report_ids": [
+        "REP-TMK-1006"
+      ],
+      "safety_review_flag": false,
+      "is_demo_seed": true
+    },
+    {
+      "physical_issue_id": "ISS-TMK-2026-007",
+      "canonical_category": "GARBAGE_OR_WASTE",
+      "canonical_summary": "Roadside waste accumulation reported near Kyathsandra (GPS unavailable)",
+      "current_issue_status": "PENDING_VERIFICATION",
+      "human_verification_status": "REVIEW_REQUIRED",
+      "severity_score": 58,
+      "severity_label": "HIGH",
+      "public_impact_score": 62,
+      "geographical_importance_score": null,
+      "geographical_importance_status": "UNAVAILABLE",
+      "corroboration_score": 0,
+      "confirmed_independent_report_count": 1,
+      "related_submission_count": 1,
+      "age_score": 0.9,
+      "days_unresolved": 0.1,
+      "priority_assessment": {
+        "status": "PROVISIONAL",
+        "score": 42.2,
+        "label": "MODERATE",
+        "is_provisional": true,
+        "formula_id": "URBANPULSE_PRIORITY_5FACTOR",
+        "formula_version": "up-priority-v1.0",
+        "factor_scores": {
+          "severity": 58,
+          "public_impact": 62,
+          "geographical_importance": null,
+          "independent_corroboration": 0,
+          "time_unresolved": 0.9
+        },
+        "factor_weights": {
+          "severity": 35,
+          "public_impact": 25,
+          "geographical_importance": 15,
+          "independent_corroboration": 15,
+          "time_unresolved": 10
+        },
+        "available_weight_coverage": 0.85,
+        "missing_factors": [
+          "geographical_importance"
+        ],
+        "calculation_expression": "[(58.0 × 0.35) + (62.0 × 0.25) + (0.0 × 0.15) + (0.9 × 0.10)] / 0.85 = 42.2",
+        "calculation_explanation": "Provisional normalized score computed across 85% available factor weight (missing: geographical_importance).",
+        "safety_review_flag": false,
+        "ranking_eligibility": "PROVISIONAL_ELIGIBLE",
+        "comparability_warnings": [
+          "PROVISIONAL_SCORE_MISSING_FACTORS"
+        ]
+      },
+      "authoritative_location": null,
+      "location_history": [],
+      "human_override": null,
+      "assigned_officer_id": null,
+      "assigned_officer_name": null,
+      "assigned_at": null,
+      "due_at": null,
+      "field_notes": [],
+      "field_evidence": [],
+      "first_reported_at": "2026-11-24T09:00:00.000Z",
+      "last_updated_at": "2026-11-24T09:00:00.000Z",
+      "resolved_at": null,
+      "reopened_at": null,
+      "associated_report_ids": [
+        "REP-TMK-1007"
+      ],
+      "safety_review_flag": false,
+      "is_demo_seed": true
+    }
+  ],
+  "notifications": [
+    {
+      "notification_id": "notif-1",
+      "target_role": "ADMIN",
+      "recipient_user_id": null,
+      "type": "SAFETY_ESCALATION",
+      "title": "Safety Review Recommended: UP-TMK-1005",
+      "message": "Tilted streetlight pole reported at Batawadi Junction requires manual category review.",
+      "related_report_id": "REP-TMK-1005",
+      "related_issue_id": "ISS-TMK-2026-005",
+      "created_at": "2026-11-24T04:00:00.000Z",
+      "read": false
+    },
+    {
+      "notification_id": "notif-2",
+      "target_role": "FIELD_OFFICER",
+      "recipient_user_id": "usr-officer-1",
+      "type": "TASK_ASSIGNED",
+      "title": "Assigned: UP-TMK-1002 (Mandi Pete Drain Waste)",
+      "message": "High-severity waste accumulation near storm drain assigned to Zone B.H. Road.",
+      "related_report_id": "REP-TMK-1002",
+      "related_issue_id": "ISS-TMK-2026-002",
+      "created_at": "2026-11-22T12:00:00.000Z",
+      "read": false
+    },
+    {
+      "notification_id": "notif-3",
+      "target_role": "CITIZEN",
+      "recipient_user_id": "usr-citizen-demo",
+      "type": "ISSUE_RESOLVED",
+      "title": "Report UP-TMK-1006 Resolved",
+      "message": "Siddaganga Extension asphalt repair was completed and verified.",
+      "related_report_id": "REP-TMK-1006",
+      "related_issue_id": "ISS-TMK-2026-006",
+      "created_at": "2026-11-23T09:00:00.000Z",
+      "read": false
+    }
+  ],
+  "auditLogs": [
+    {
+      "audit_id": "aud-1",
+      "occurred_at": "2026-11-19T12:00:00.000Z",
+      "actor_id": "system-seed",
+      "actor_role": "SYSTEM",
+      "actor_name": "UrbanPulse Platform",
+      "action": "DEMO_DATASET_INITIALIZED",
+      "entity_type": "CONFIG",
+      "entity_id": "tumakuru-demo",
+      "summary": "Initialized clearly labelled Tumakuru demonstration dataset with 7 sample reports."
+    },
+    {
+      "audit_id": "aud-2",
+      "occurred_at": "2026-11-23T09:00:00.000Z",
+      "actor_id": "usr-officer-2",
+      "actor_role": "FIELD_OFFICER",
+      "actor_name": "Meghana Hegde",
+      "action": "ISSUE_RESOLVED",
+      "entity_type": "ISSUE",
+      "entity_id": "ISS-TMK-2026-006",
+      "summary": "Submitted asphalt patch verification and resolved ISS-TMK-2026-006."
+    }
+  ],
+  "config": {
+    "operating_city": "Tumakuru, Karnataka, India",
+    "priority_weights": {
+      "severity": 35,
+      "public_impact": 25,
+      "geographical_importance": 15,
+      "independent_corroboration": 15,
+      "time_unresolved": 10
+    },
+    "minimum_priority_factor_coverage": 0.6,
+    "age_half_saturation_days": 14,
+    "auto_resolve_on_field_submission": false,
+    "confidence_review_threshold": 0.8,
+    "formula_version": "up-priority-v1.0",
+    "severity_rubric_version": "1.0-provisional"
+  },
+  "idempotencyKeys": {}
+}
