@@ -90,3 +90,228 @@
     animation: none;
   }
 }
+
+/* -------------------------------------------------------------------------- */
+/* UrbanPulse appearance themes                                               */
+/* Dark remains the default look. Light mode uses warm cream and soft mint.    */
+/* -------------------------------------------------------------------------- */
+:root {
+  color-scheme: dark;
+  --up-page: #07111F;
+  --up-surface: #0C1929;
+  --up-surface-raised: #13273B;
+  --up-text: #F4F7FC;
+  --up-muted: #9AADC1;
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+  --up-page: #F2F0E7;
+  --up-surface: #FBFAF3;
+  --up-surface-raised: #E8EEE5;
+  --up-text: #29372F;
+  --up-muted: #6E7C72;
+}
+
+:root[data-theme='light'] body {
+  background-color: var(--up-page);
+  color: var(--up-text);
+}
+
+/* Main canvas, cards, panels, sidebars and form surfaces */
+:root[data-theme='light'] [class*='bg-[#07111F]'] {
+  background-color: #F2F0E7 !important;
+}
+
+:root[data-theme='light'] [class*='bg-[#0C1929]'] {
+  background-color: #FBFAF3 !important;
+}
+
+:root[data-theme='light'] [class*='bg-[#13273B]'] {
+  background-color: #E5ECE3 !important;
+}
+
+:root[data-theme='light'] [class*='bg-white/'] {
+  background-color: rgba(91, 119, 98, 0.07) !important;
+}
+
+:root[data-theme='light'] [class*='hover:bg-white/']:hover {
+  background-color: rgba(91, 119, 98, 0.12) !important;
+}
+
+/* Soft mint / sage accents replace the bright cyan command-centre accents. */
+:root[data-theme='light'] [class*='bg-[#20C8E8]'] {
+  background-color: #D7E9DE !important;
+}
+
+:root[data-theme='light'] [class*='bg-[#20C997]'] {
+  background-color: #D3E7D7 !important;
+}
+
+:root[data-theme='light'] [class*='bg-[#377DFF]'] {
+  background-color: #DCE8E8 !important;
+  color: #31594F !important;
+}
+
+:root[data-theme='light'] [class*='text-[#F4F7FC]'] {
+  color: #29372F !important;
+}
+
+:root[data-theme='light'] [class*='text-[#9AADC1]'] {
+  color: #6E7C72 !important;
+}
+
+:root[data-theme='light'] [class*='text-[#20C8E8]'] {
+  color: #39796B !important;
+}
+
+:root[data-theme='light'] [class*='text-[#20C997]'],
+:root[data-theme='light'] [class*='text-[#68E7BE]'] {
+  color: #39745A !important;
+}
+
+:root[data-theme='light'] [class*='text-[#FF9DA2]'],
+:root[data-theme='light'] [class*='text-[#FF757C]'],
+:root[data-theme='light'] [class*='text-[#FF8A90]'],
+:root[data-theme='light'] [class*='text-[#FF9BA0]'],
+:root[data-theme='light'] [class*='text-[#FF8C92]'] {
+  color: #A64249 !important;
+}
+
+/* Borders, separators and outlines */
+:root[data-theme='light'] [class*='border-white/'],
+:root[data-theme='light'] [class*='divide-white/'] {
+  border-color: rgba(82, 105, 88, 0.18) !important;
+}
+
+:root[data-theme='light'] [class*='border-[#20C8E8]'] {
+  border-color: #B5D2C0 !important;
+}
+
+:root[data-theme='light'] [class*='border-[#20C997]'] {
+  border-color: #B8D5BE !important;
+}
+
+:root[data-theme='light'] [class*='hover:border-white/']:hover {
+  border-color: rgba(82, 105, 88, 0.32) !important;
+}
+
+:root[data-theme='light'] [class*='hover:text-white']:hover {
+  color: #29372F !important;
+}
+
+/* Inputs should remain easy to read in both themes. */
+:root[data-theme='light'] input,
+:root[data-theme='light'] textarea,
+:root[data-theme='light'] select {
+  color: #29372F;
+}
+
+:root[data-theme='light'] input::placeholder,
+:root[data-theme='light'] textarea::placeholder {
+  color: #89958B;
+  opacity: 1;
+}
+
+:root[data-theme='light'] option {
+  background: #FBFAF3;
+  color: #29372F;
+}
+
+/* Leaflet controls and the map backdrop adapt to the selected appearance. */
+:root[data-theme='light'] .leaflet-container {
+  background: #E8E6DC;
+}
+
+:root[data-theme='light'] .urbanpulse-dark-tiles {
+  filter: none;
+}
+
+:root[data-theme='light'] .leaflet-control-attribution {
+  background: rgba(251, 250, 243, 0.9) !important;
+  color: #65736A !important;
+}
+
+:root[data-theme='light'] .leaflet-control-attribution a {
+  color: #39796B !important;
+}
+
+:root[data-theme='light'] .leaflet-bar a,
+:root[data-theme='light'] .leaflet-bar a:hover {
+  background-color: #FBFAF3;
+  color: #34473B;
+  border-color: rgba(82, 105, 88, 0.2);
+}
+
+:root[data-theme='light'] .leaflet-popup-content-wrapper,
+:root[data-theme='light'] .leaflet-popup-tip {
+  background: #FBFAF3;
+  color: #29372F;
+}
+
+/* Keep the switch visible and give theme changes a gentle, non-distracting fade. */
+body,
+header,
+aside,
+main,
+button,
+input,
+textarea,
+select,
+[class*='bg-[#07111F]'],
+[class*='bg-[#0C1929]'],
+[class*='bg-[#13273B]'] {
+  transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body,
+  header,
+  aside,
+  main,
+  button,
+  input,
+  textarea,
+  select {
+    transition: none;
+  }
+}
+
+/* Softer status chips for the warm light palette. */
+:root[data-theme='light'] [class*='bg-slate-500/'] {
+  background-color: #E7EAE3 !important;
+}
+:root[data-theme='light'] [class*='text-slate-300'] {
+  color: #59675D !important;
+}
+:root[data-theme='light'] [class*='border-slate-400'] {
+  border-color: #CBD4C8 !important;
+}
+:root[data-theme='light'] [class*='bg-amber-500/'] {
+  background-color: #F5EBD0 !important;
+}
+:root[data-theme='light'] [class*='text-amber-300'],
+:root[data-theme='light'] [class*='text-amber-200'] {
+  color: #805E1E !important;
+}
+:root[data-theme='light'] [class*='border-amber-400'] {
+  border-color: #E8D4A5 !important;
+}
+:root[data-theme='light'] [class*='bg-cyan-500/'] {
+  background-color: #DCECE7 !important;
+}
+:root[data-theme='light'] [class*='text-cyan-200'] {
+  color: #356B61 !important;
+}
+:root[data-theme='light'] [class*='border-cyan-400'] {
+  border-color: #B9D7CC !important;
+}
+:root[data-theme='light'] [class*='bg-orange-500/'] {
+  background-color: #F6E5D4 !important;
+}
+:root[data-theme='light'] [class*='text-orange-200'] {
+  color: #89562D !important;
+}
+:root[data-theme='light'] [class*='border-orange-400'] {
+  border-color: #EACDB0 !important;
+}

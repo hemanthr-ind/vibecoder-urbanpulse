@@ -19,6 +19,8 @@ import {
   Map as MapIcon,
   Megaphone,
   Menu,
+  Moon,
+  Sun,
   PlusCircle,
   Search,
   Settings,
@@ -89,6 +91,17 @@ interface NavItem {
 }
 
 export default function App() {
+  const [theme, setTheme] = useState<'dark' | 'light'>(() => {
+    if (typeof window === 'undefined') return 'dark';
+    const savedTheme = window.localStorage.getItem('urbanpulse-theme');
+    return savedTheme === 'light' ? 'light' : 'dark';
+  });
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+    window.localStorage.setItem('urbanpulse-theme', theme);
+  }, [theme]);
+
   const [activeRole, setActiveRole] = useState<UserRole>('CITIZEN');
   const [currentUser, setCurrentUser] = useState<UserAccount | null>(null);
   const [authStatus, setAuthStatus] = useState<AuthStatusResponse | null>(null);
@@ -383,6 +396,18 @@ export default function App() {
               );
             })}
           </div>
+
+          {/* Light / Dark appearance switch */}
+          <button
+            type="button"
+            onClick={() => setTheme((current) => (current === 'dark' ? 'light' : 'dark'))}
+            aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+            aria-pressed={theme === 'light'}
+            title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+            className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-[#0C1929] text-[#9AADC1] transition hover:text-white"
+          >
+            {theme === 'dark' ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+          </button>
 
           <button
             type="button"
